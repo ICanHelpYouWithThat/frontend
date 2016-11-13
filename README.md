@@ -1,6 +1,6 @@
 [![Build Status](https://travis-ci.org/ICanHelpYouWithThat/frontend.svg?branch=master)](https://travis-ci.org/ICanHelpYouWithThat/frontend)
 
-#  Dev Setup
+###  Dev Setup
 1) Clone the repo
         
         git clone https://github.com/ICanHelpYouWithThat/frontend.git
@@ -15,6 +15,18 @@
         npm start
 
 App is now running on port 4200
+#### Karma and protractor for testing.
+
+###### *Karma Docs*
+http://www.protractortest.org/#/
+
+#### Angular 2 with TypeScript
+###### *Angular Docs*
+https://angular.io/docs/ts/latest/
+###### *TypeScript Docs*
+https://www.typescriptlang.org/docs/tutorial.html
+
+
 
 Simple site which allows people who are logged in through Facebook to find tasks that help out an organization who needs a skill they can offer - location/time constraints are matching.
 
