@@ -2,12 +2,17 @@
 
 #  Dev Setup
 1) Clone the repo
-git clone https://github.com/ICanHelpYouWithThat/frontend.git
-cd ./frontend
+        
+        git clone https://github.com/ICanHelpYouWithThat/frontend.git
+        cd ./frontend
 
-2) npm install
+2) install node modules
 
-3) npm start
+        npm install
+
+3) Start the app
+
+        npm start
 
 App is now running on port 4200
 
