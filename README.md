@@ -10,7 +10,7 @@ Organization User Create events that require skills at a location for a certain 
 Simple UI with a few screens that have simple forms to enter in data
 
 ###### *Node Backend Repo*
-https://github.com/ICanHelpYouWithThat/backend.git
+https://github.com/ICanHelpYouWithThat/backend
 
 ###  Dev Setup
 1) Clone the repo
