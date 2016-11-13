@@ -1,5 +1,6 @@
-# Dev Setup
+[![Build Status](https://travis-ci.org/ICanHelpYouWithThat/frontend.svg?branch=master)](https://travis-ci.org/ICanHelpYouWithThat/frontend)
 
+#  Dev Setup
 1) Clone the repo
 git clone https://github.com/ICanHelpYouWithThat/frontend.git
 cd ./frontend
