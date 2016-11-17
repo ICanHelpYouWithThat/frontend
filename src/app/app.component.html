@@ -1,3 +1,15 @@
-<h1>
-  {{title}}
-</h1>
+<md-card id="help_you" (click)="onClick()" (mouseover)="onCardHover()" [ngClass]="hoverClass">
+  <md-card-header class="card_header" [ngStyle]="{'font-size': yuem + 'em;'}">
+    {{title}}
+  </md-card-header>
+  <md-card-content>
+  <img md-card-image src="https://scontent.fbed1-2.fna.fbcdn.net/v/t1.0-9/15027882_10101666597237585_7556774340470305079_n.jpg?oh=635948e21d52a9aacc0ab9cc53a4e1ad&oe=58D120BD"/>
+  <br>
+  Click the card. &lt;=PRO TIP=&gt; I AM THE CARD=&gt;
+    <div style="text-align: center;">
+    <br />IN !!! ===><br />v<br /><h1>{{counter}}</h1><h3>^^</h3>
+
+    </div>
+  </md-card-content>
+
+</md-card>
