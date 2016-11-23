@@ -17,7 +17,9 @@ before_install:
   - export DISPLAY=:99.0
   - export CXX=g++-4.8
   - sh -e /etc/init.d/xvfb start
-  - if [ ! -d "$HOME/google-cloud-sdk/bin" ]; then rm -rf $HOME/google-cloud-sdk; sudo curl "https://sdk.cloud.google.com --quiet" | bash; fi
+  - if [ ! -d "$HOME/google-cloud-sdk/bin" ]; then rm -rf $HOME/google-cloud-sdk; sudo curl google-cloud-sdk-135.0.0-linux-x86_64.tar.gz 2> gcloud.sh; fi
+  - sudo chmod 755 gcloud.sh
+  - sudo ./gcloud.sh --quiet
   - ls /home/travis/google-cloud-sdk
   - source /home/travis/google-cloud-sdk/path.bash.inc
   - gcloud version
