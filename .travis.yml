@@ -13,14 +13,24 @@ apt:
   - google-chrome-beta
   - g++-4.8
 before_install:
-- export CHROME_BIN=chromium-browser
-- export DISPLAY=:99.0
-- export CXX=g++-4.8
-- sh -e /etc/init.d/xvfb start
-- docker build -t us.gcr.io/icanhelpyouwiththat-149304/frontendlatest .
-- docker run -d -p 127.0.0.1:80:4567 us.gcr.io/icanhelpyouwiththat-149304/frontend:latest /bin/sh -c "cd /root/frontend;"
-- docker ps -a
-- docker run us.gcr.io/icanhelpyouwiththat-149304/frontend:latest /bin/sh -c "cd /root/api;"
+  - export CHROME_BIN=chromium-browser
+  - export DISPLAY=:99.0
+  - export CXX=g++-4.8
+  - sh -e /etc/init.d/xvfb start
+  - if [ ! -d "$HOME/google-cloud-sdk/bin" ]; then rm -rf $HOME/google-cloud-sdk; curl https://sdk.cloud.google.com | bash; fi
+  - source /home/travis/google-cloud-sdk/path.bash.inc
+  - gcloud version
+  - gcloud --quiet components update kubectl
+  - echo $GCLOUD_KEY | base64 --decode > gcloud.p12
+  - gcloud auth activate-service-account $GCLOUD_EMAIL --key-file gcloud.p12
+  - ssh-keygen -f ~/.ssh/google_compute_engine -N ""
+  - gcloud docker -a
+  - docker build -t us.gcr.io/icanhelpyouwiththat-149304/frontend:latest .
+  - docker push us.gcr.io/icanhelpyouwiththat-149304/frontend:latest > /dev/null
+  - docker run -d -p 127.0.0.1:80:4567 us.gcr.io/icanhelpyouwiththat-149304/frontend:latest /bin/sh -c "cd /root/frontend;"
+  - gcloud container clusters get-credentials icanhelpyouwiththat-149304
+  - docker ps -a
+#- docker run us.gcr.io/icanhelpyouwiththat-149304/frontend:latest /bin/sh -c "cd /root/api;"
 before_script:
 - npm install execSync --ignore-scripts
 - npm install -g angular-cli
