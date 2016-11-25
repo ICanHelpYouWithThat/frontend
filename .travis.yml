@@ -20,7 +20,7 @@ before_install:
   - gcloud version
   - sudo gcloud --quiet components update kubectl
   - GCLOUDDIR=$(which gcloud)
-  - source $(echo "${GCLOUDDIR///bin\/gcloud}"/path.bash.inc)
+  - echo "${GCLOUDDIR///bin\/gcloud}"/path.bash.inc
   - echo $GCLOUD_KEY | base64 --decode > gcloud.p12
   - gcloud auth activate-service-account $GCLOUD_EMAIL --key-file gcloud.p12
   - ssh-keygen -f ~/.ssh/google_compute_engine -N ""
