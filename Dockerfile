@@ -5,10 +5,9 @@ RUN sed -i 's/^mesg n$/tty -s \&\& mesg n/g' /root/.profile
 
 # Declare constants
 ENV NVM_VERSION v0.32.1
-ENV NODE_VERSION 6.9.1
+ENV NODE_VERSION 7.1.0
 
 ENV NVM_DIR /usr/local/nvm
-ENV NODE_VERSION 6.9.1
 ENV NODE_PATH $NVM_DIR/v$NODE_VERSION/lib/node_modules
 ENV PATH      $NVM_DIR/v$NODE_VERSION/bin:$PATH
 
@@ -20,6 +19,21 @@ RUN curl https://raw.githubusercontent.com/creationix/nvm/$NVM_VERSION/install.s
     && source $NVM_DIR/nvm.sh \
     && nvm install $NODE_VERSION \
     && nvm alias default $NODE_VERSION \
-    && nvm use default \
-    && npm install -g node-gyp \
-    && npm install -g bower
+    && nvm use default
+
+COPY    ./ops/nginx.conf /etc/nginx/nginx.conf
+
+RUN npm install;
+
+RUN npm run build;
+
+ADD ./dist /root;
+
+RUN rm node_modules;
+
+VOLUME ["/etc/nginx"]
+
+#setup the port
+EXPOSE  3001
+EXPOSE  3002
+

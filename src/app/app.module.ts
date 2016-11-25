@@ -8,13 +8,13 @@ import { MaterialModule } from '@angular/material';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    MaterialModule.forRoot()
+    MaterialModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]
