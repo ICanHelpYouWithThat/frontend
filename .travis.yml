@@ -19,7 +19,8 @@ before_install:
   - sh -e /etc/init.d/xvfb start
   - gcloud version
   - sudo gcloud --quiet components update kubectl
-  - source /home/travis/google-cloud-sdk/path.bash.inc
+  - GCLOUDDIR=$(which gcloud)
+  - source $(echo "${GCLOUDDIR///bin\/gcloud}"/path.bash.inc)
   - echo $GCLOUD_KEY | base64 --decode > gcloud.p12
   - gcloud auth activate-service-account $GCLOUD_EMAIL --key-file gcloud.p12
   - ssh-keygen -f ~/.ssh/google_compute_engine -N ""
