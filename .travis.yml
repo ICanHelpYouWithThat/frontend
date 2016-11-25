@@ -23,7 +23,7 @@ before_install:
   - echo $GCLOUD_KEY | base64 --decode > gcloud.json
   - sudo gcloud auth activate-service-account $GCLOUD_EMAIL --key-file gcloud.json
   - ssh-keygen -f ~/.ssh/google_compute_engine -N ""
-  - gcloud docker -a
+  - sudo gcloud docker -a
   - docker build -t us.gcr.io/icanhelpyouwiththat-149304/frontend:latest .
   - docker push us.gcr.io/icanhelpyouwiththat-149304/frontend:latest > /dev/null
   - docker run -d -p 127.0.0.1:80:4567 us.gcr.io/icanhelpyouwiththat-149304/frontend:latest /bin/sh -c "cd /root/frontend;"
