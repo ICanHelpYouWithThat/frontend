@@ -32,7 +32,9 @@ WORKDIR /frontend
 
 RUN ["/bin/bash", "-c", "cd /frontend; source ~/.profile; npm run build"]
 
-ADD dist/. /var/www
+ADD . /var/frontend
+
+RUN mv /var/frontend/dist /var/www && rm -rf /var/frontend
 
 WORKDIR /var/www
 
