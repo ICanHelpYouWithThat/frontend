@@ -32,8 +32,8 @@ WORKDIR /frontend
 
 RUN ["/bin/bash", "-c", "cd /frontend; source ~/.profile; npm run build"]
 
-ADD ./dist/. /var/www
-RUN cd /var/www && rm -rf /frontend;
+ADD /frontend/dist/. /var/www
+RUN cd /var/www && rm -rf /frontend
 
 VOLUME ["/etc/nginx"]
 
