@@ -1,37 +1,20 @@
-import {Component, ViewEncapsulation} from '@angular/core';
-import {ProfileService} from './services/profile.service';
+import {Component, ViewEncapsulation, OnInit} from '@angular/core';
+import {Router} from '@angular/router'
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   encapsulation: ViewEncapsulation.None,
   styleUrls: ['./app.component.css'],
-  providers: [ProfileService]
 })
 
 export class AppComponent {
 
-  private username: String;
-  private password: String;
+  private profile;
 
-  constructor(private _profileService: ProfileService) {
-    this.username = '';
-    this.password = '';
+  constructor (private _router: Router) {
+    // Check if user has token, if not redirect to login page
+    !sessionStorage.getItem('jwt') ? this._router.navigate(['login']) : this._router.navigate(['dashboard']);
   }
 
-  login () {
-    this._profileService
-      .login({userid: this.username, password: this.password})
-      .subscribe(
-        (response) => {
-          sessionStorage.setItem('jwt', response.token)
-        },
-        (error) => {
-          console.log(error.message)
-        }
-      )
-  }
-
-  ngOnInit() {
-  }
 }

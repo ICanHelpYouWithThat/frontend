@@ -10,7 +10,7 @@ export class ProfileService {
   private options: RequestOptions;
 
   constructor (private _http: Http) {
-    this.url = 'http://localhost:3000/profile';
+    this.url = 'http://localhost:3000/profile/';
     this.headers = new Headers({
       'Content-Type': 'application/json',
       'Accept': 'application/json'
@@ -26,10 +26,10 @@ export class ProfileService {
       .catch((error) => Observable.throw(error.json() || 'Server error'))
   };
 
-  public getProfile = (profileId) => {
+  public getProfile = (profileId?) => {
 
     if (sessionStorage.getItem('jwt')) {
-      let url = this.url + '?id=' + profileId;
+      let url = profileId ? this.url + profileId : this.url;
 
       this.options.headers.append('Authorization', sessionStorage.getItem('jwt'));
 
@@ -54,7 +54,7 @@ export class ProfileService {
   public deleteProfile = (profileId) => {
 
     if (sessionStorage.getItem('jwt')) {
-      let url = this.url + '?id=' + profileId;
+      let url = this.url + profileId;
 
       this.options.headers.append('Authorization', sessionStorage.getItem('jwt'));
 
@@ -67,7 +67,7 @@ export class ProfileService {
   };
 
   public login = (credentials) => {
-    let url = this.url + '/login';
+    let url = this.url + 'login';
 
     return this._http.post(url, JSON.stringify(credentials), this.options)
       .map((response: Response) => response.json())
