@@ -30,7 +30,7 @@ RUN ["/bin/bash", "-c", "cd /frontend; source ~/.profile; npm install"]
 
 WORKDIR /frontend
 
-RUN ["/bin/bash", "-c", "cd /frontend; source ~/.profile; npm run build"]
+RUN cd /frontend; . ~/.profile; npm run build
 
 ADD . /var/frontend
 
