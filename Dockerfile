@@ -32,8 +32,9 @@ WORKDIR /frontend
 
 RUN ["/bin/bash", "-c", "cd /frontend; source ~/.profile; npm run build"]
 
+WORKDIR ./dist
 
-COPY ./dist /var/www
+COPY . /var/www
 WORKDIR /var/www
 
 
