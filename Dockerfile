@@ -35,12 +35,13 @@ ADD . /var/frontend
 
 RUN ["/bin/bash", "-c", "cd /frontend; source ~/.profile; npm run build"]
 
-RUN cd /var/frontend && ls
-RUN mv /var/frontend/dist /var/www && rm -rf /var/frontend
+RUN ["/bin/bash", "-c", "cd /var/frontend && ls"]
+RUN ["/bin/bash", "-c", "mv /var/frontend/dist /var/www && rm -rf /var/frontend"]
 
 WORKDIR /var/www
 
-RUN cd /var/www && rm -rf /frontend
+RUN ["/bin/bash", "-c", "cd /var/www && rm -rf /frontend"]
+
 
 VOLUME ["/etc/nginx"]
 
