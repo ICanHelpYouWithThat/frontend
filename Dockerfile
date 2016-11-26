@@ -23,13 +23,19 @@ RUN curl https://raw.githubusercontent.com/creationix/nvm/$NVM_VERSION/install.s
 
 COPY    ./ops/nginx.conf /etc/nginx/nginx.conf
 
-RUN npm install;
+COPY . /frontend
 
-RUN npm run build;
 
-ADD ./dist /root;
+RUN ["/bin/bash", "-c", "cd /frontend; source ~/.profile; npm install"]
 
-RUN rm node_modules;
+WORKDIR /frontend
+
+RUN ["/bin/bash", "-c", "cd /frontend; source ~/.profile; npm run build"]
+
+ADD ./dist /var/www;
+
+RUN mv -v /var/www/dist/* /var/www && rm -rf /var/www/dist;
+RUN cd /var/www && rm -rf /frontend;
 
 VOLUME ["/etc/nginx"]
 
