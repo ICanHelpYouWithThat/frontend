@@ -26,13 +26,14 @@ COPY    ./ops/nginx.conf /etc/nginx/nginx.conf
 COPY . /frontend
 
 
-RUN ["/bin/bash", "-c", "cd /frontend; source ~/.profile; npm install"]
+RUN cd /frontend; . ~/.profile; npm install
 
 WORKDIR /frontend
 
-RUN cd /frontend; . ~/.profile; npm run build
 
 ADD . /var/frontend
+
+RUN cd /var/frontend; . ~/.profile; npm run build
 
 RUN cd /var/frontend && ls
 RUN mv /var/frontend/dist /var/www && rm -rf /var/frontend
