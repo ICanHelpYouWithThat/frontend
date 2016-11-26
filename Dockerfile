@@ -34,6 +34,7 @@ RUN cd /frontend; . ~/.profile; npm run build
 
 ADD . /var/frontend
 
+RUN cd /var/frontend && ls
 RUN mv /var/frontend/dist /var/www && rm -rf /var/frontend
 
 WORKDIR /var/www
