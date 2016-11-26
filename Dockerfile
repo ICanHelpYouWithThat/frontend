@@ -30,12 +30,18 @@ RUN ["/bin/bash", "-c", "cd /frontend; source ~/.profile; npm install"]
 
 WORKDIR /frontend
 
+
+ADD . /var/frontend
+
 RUN ["/bin/bash", "-c", "cd /frontend; source ~/.profile; npm run build"]
 
-ADD ./dist /var/www;
+RUN ["/bin/bash", "-c", "cd /var/frontend && ls"]
+RUN ["/bin/bash", "-c", "mv /var/frontend/dist /var/www && rm -rf /var/frontend"]
+RUN ["/bin/bash", "-c", "mkdir /logs && echo -n > /logs/access.log"]
+WORKDIR /var/www
 
-RUN mv -v /var/www/dist/* /var/www && rm -rf /var/www/dist;
-RUN cd /var/www && rm -rf /frontend;
+RUN ["/bin/bash", "-c", "cd /var/www && rm -rf /frontend"]
+
 
 VOLUME ["/etc/nginx"]
 
