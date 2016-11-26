@@ -32,7 +32,7 @@ WORKDIR /frontend
 
 RUN ["/bin/bash", "-c", "cd /frontend; source ~/.profile; npm run build"]
 
-ADD ./dist/. /var/www
+ADD dist/. /var/www
 
 WORKDIR /var/www
 
