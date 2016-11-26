@@ -17,7 +17,7 @@
   "homepage": "https://github.com/ICanHelpYouWithThat/frontend#readme",
   "angular-cli": {},
   "scripts": {
-    "start": "ng serve",
+    "start": "npm install && ng serve",
     "build": "ng build --target=production --environment=prod",
     "lint": "tslint \"src/**/*.ts\"",
     "test": "ng test",
