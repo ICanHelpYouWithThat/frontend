@@ -30,22 +30,20 @@ RUN ["/bin/bash", "-c", "cd /frontend; source ~/.profile; npm install"]
 
 WORKDIR /frontend
 
+RUN ["/bin/bash", "-c", "cd /frontend; source ~/.profile; npm run build"]
+
 
 COPY ./dist /var/www
 WORKDIR /var/www
 
-RUN ["/bin/bash", "-c", "cd /frontend; source ~/.profile; npm run build"]
 
-RUN ["/bin/bash", "-c", "cd /var/frontend && ls"]
-RUN ["/bin/bash", "-c", "mv /var/frontend/dist /var/www && rm -rf /var/frontend"]
+
+RUN ["/bin/bash", "-c", "cd /var/www && ls"]
+RUN ["/bin/bash", "-c", "cd /var/www && rm -rf /var/frontend"]
 RUN ["/bin/bash", "-c", "mkdir /logs && echo -n > /logs/access.log"]
-
-RUN ["/bin/bash", "-c", "cd /var/www && rm -rf /frontend"]
-
 
 VOLUME ["/etc/nginx"]
 
 #setup the port
 EXPOSE  3001
 EXPOSE  3002
-
