@@ -26,7 +26,7 @@ COPY    ./ops/nginx.conf /etc/nginx/nginx.conf
 COPY . /frontend
 
 
-RUN ["/bin/bash", "-c", "cd /frontend; source ~/.profile; npm install"]
+RUN ["/bin/bash", "-c", "cd /frontend; source ~/.profile; npm install; npm rebuild node-sass"]
 
 WORKDIR /frontend
 
