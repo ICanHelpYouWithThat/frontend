@@ -38,7 +38,7 @@ COPY . /var/www
 WORKDIR /var/www
 
 
-
+RUN ["/bin/bash", "-c", "cp /frontend/dist/* /var/www"]
 RUN ["/bin/bash", "-c", "cd /var/www && ls"]
 RUN ["/bin/bash", "-c", "cd /var/www && rm -rf /var/frontend"]
 RUN ["/bin/bash", "-c", "mkdir /logs && echo -n > /logs/access.log"]

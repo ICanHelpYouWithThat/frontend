@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
 import {Http, Response, RequestOptions, Headers} from '@angular/http';
 import {Observable} from "rxjs";
+import { environment } from '../../environments/environment';
 
 @Injectable()
 export class ProfileService {
@@ -10,7 +11,7 @@ export class ProfileService {
   private options: RequestOptions;
 
   constructor (private _http: Http) {
-    this.url = 'http://localhost:3000/profile/';
+    this.url = environment.host + '/profile/';
     this.headers = new Headers({
       'Content-Type': 'application/json',
       'Accept': 'application/json'
