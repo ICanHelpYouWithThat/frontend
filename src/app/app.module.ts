@@ -8,13 +8,15 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { InviteComponent } from './components/invite/invite.component';
+import { SignupComponent } from './components/signup/signup.component';
 import { MaterialModule } from '@angular/material';
 
 const appRoutes: Routes = [
   {path: '', component: AppComponent},
   {path: 'login', component: LoginComponent},
   {path: 'dashboard', component: DashboardComponent},
-  {path: 'invite', component: InviteComponent}
+  {path: 'invite', component: InviteComponent},
+  {path: 'signup', component: SignupComponent}
 ];
 
 @NgModule({
@@ -22,7 +24,8 @@ const appRoutes: Routes = [
     AppComponent,
     LoginComponent,
     DashboardComponent,
-    InviteComponent
+    InviteComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,

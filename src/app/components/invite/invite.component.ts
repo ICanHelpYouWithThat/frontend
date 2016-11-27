@@ -46,6 +46,7 @@ export class InviteComponent implements OnInit {
   }
 
 invite () {
+    console.log("WE MADE IT");
     this._inviteService
       .invite(this.invitation)
       .subscribe(
