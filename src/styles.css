@@ -1,2 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
 @import '~@angular/material/core/theming/prebuilt/deeppurple-amber.css';
+
+.text {
+  color: black;
+  text-align: center;
+  font-size: .9em;
+}
+
+.seperator-vertical {
+  border-top: .1em solid gold;
+  border-bottom: .1em solid gold;
+}
