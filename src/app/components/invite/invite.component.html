@@ -12,7 +12,7 @@
         <md-list-item *ngFor="let email of invitation.emails">{{email}}</md-list-item>
       </md-list>
 
-      <md-textarea class="invite_message" placeholder="emailtext" value="" [(ngModel)]="invitation.message" rows="5"></md-textarea>
+      <md-textarea class="invite_message" placeholder="E-Mail Text" value="" [(ngModel)]="invitation.message" rows="5"></md-textarea>
       <button md-button type="submit" class="invite_button" style="color: white;" (click)="invite()">Send Invites</button>
 
   </md-card-content>

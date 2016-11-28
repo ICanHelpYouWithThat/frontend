@@ -2,12 +2,19 @@
   <md-card-content>
     <img md-card-image class="content" src="https://scontent.fbed1-2.fna.fbcdn.net/v/t1.0-9/15027882_10101666597237585_7556774340470305079_n.jpg?oh=635948e21d52a9aacc0ab9cc53a4e1ad&oe=58D120BD"/>
     <p>
-      Welcome {{profile.name}}
+      Welcome {{profile.name}}</p>
+    <md-input placeholder="ID (disabled)" align="start" disabled name="id" class="profile_input" [(ngModel)]="profile.id"></md-input>
+    <md-input placeholder="Invites (disabled)" align="start" disabled name="invites" class="profile_input" [(ngModel)]="profile.invites"></md-input>
+    <md-input placeholder="Karma (disabled)" align="start" disabled name="karma" class="profile_input" [(ngModel)]="profile.karma"></md-input>
+    <md-input placeholder="Location (disabled)" align="start" disabled name="geolocation" class="profile_input" [(ngModel)]="profile.geolocation"></md-input>
+    <md-input placeholder="Name" (keyup)="eventHandler($event)" align="start" id="name_input" name="name" class="profile_input" [(ngModel)]="profile.name"></md-input>
+    <md-input placeholder="E-Mail" (keyup)="eventHandler($event)" align="start" id="email_input" name="email" class="profile_input" [(ngModel)]="profile.email"></md-input>
+    <md-input placeholder="Phone" (keyup)="eventHandler($event)" align="start" id="phone_input" name="phone" class="profile_input" [(ngModel)]="profile.phone"></md-input>
+    <md-input placeholder="Zip-Code" (keyup)="eventHandler($event)" align="start" id="zipcode_input" name="phone" class="profile_input" [(ngModel)]="profile.zipcode"></md-input>
 
-      Invites - {{profile.invites}}</p>
-    <md-input placeholder="E-Mail" (keyup)="eventHandler($event)" align="start" id="email_input" name="username" class="invite_input" [(ngModel)]="email"></md-input>
+    <md-textarea class="profile_text" placeholder="Mission" [(ngModel)]="profile.mission" rows="5"></md-textarea>
 
-    <button md-button type="submit" class="invite_button" style="color: white;" (click)="update()">Update Profile</button>
+    <button md-button type="submit" class="profile_button" style="color: white;" (click)="update()">Update Profile</button>
 
   </md-card-content>
 </md-card>
