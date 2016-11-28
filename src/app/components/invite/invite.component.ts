@@ -16,6 +16,9 @@ export class InviteComponent implements OnInit {
   private email: string;
   private profile;
 
+ private re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+
   constructor (private _profileService: ProfileService, private _inviteService: InviteService, private _router: Router) {
 
     this.email = "";
@@ -39,14 +42,21 @@ export class InviteComponent implements OnInit {
 
   addEmail() {
     console.log("Number of invites: " + this.profile.invites)
+    this.email = this.email.trim();
+    if(this.email.length > 0)
+    {
     var anArray = this.email.split(",");
     //Check the number of invites this user has to ensure they have invites left.
     if(anArray.length <= this.profile.invites) {
       for (var i = 0; i < anArray.length; i++) {
-        this.profile.invites--;
-        this.invitation.emails.push(anArray[i]);
+       if(this.re.test(anArray[i]))
+       {
+         this.profile.invites--;
+         this.invitation.emails.push(anArray[i]);
+       }
       }
       this.email = "";
+    }
     }
   }
   ngOnInit () {
