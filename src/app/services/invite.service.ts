@@ -23,7 +23,7 @@ export class InviteService {
 
 
   public invite = (invitation?) => {
-
+console.log("I AM IN THE INVITE" + JSON.stringify(invitation));
     if (sessionStorage.getItem('jwt')) {
 
       this.options.headers.append('Authorization', sessionStorage.getItem('jwt'));

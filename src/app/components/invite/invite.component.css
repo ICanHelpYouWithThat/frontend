@@ -11,6 +11,10 @@
   width: 80%;
 }
 
+.invite_message {
+  width: 100%;
+}
+
 .invite_button {
   position: relative;
   width: 100%;

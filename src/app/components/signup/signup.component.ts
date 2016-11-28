@@ -2,36 +2,37 @@ import { Component, ViewEncapsulation, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ProfileService } from '../../services/profile.service';
 
-interface Credentials {
-  userid: string,
-  password: string
+interface Profile {
+  name: string,
+  email: string,
+  mission: string
 }
 
 @Component({
-  templateUrl: './login.component.html',
+  templateUrl: 'signup.component.html',
   encapsulation: ViewEncapsulation.None,
-  styleUrls: ['./login.component.css'],
+  styleUrls: ['signup.component.css'],
   providers: [ProfileService]
 })
 
-export class LoginComponent implements OnInit {
+export class SignupComponent implements OnInit {
 
-  private credentials: Credentials;
+  private profile: Profile;
 
   constructor(private _profileService: ProfileService, private _router: Router) {
-    this.credentials = {
-      userid: '',
-      password: ''
+    this.profile = {
+      name: '',
+      email: '',
+      mission: ''
     }
   }
 
-  login () {
+  signup () {
     this._profileService
-      .login(this.credentials)
+      .createProfile(this.profile)
       .subscribe(
         (response) => {
-          sessionStorage.setItem('jwt', response.token);
-          this._router.navigate(['']);
+          this._router.navigate(['thankyou']);
         },
         (error) => {
           console.log(error.message)
@@ -40,7 +41,5 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit() {
-
   }
-
 }
