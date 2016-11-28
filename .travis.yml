@@ -12,6 +12,10 @@ apt:
   - google-chrome-stable
   - google-chrome-beta
   - g++-4.8
+branches:
+  only:
+  - master
+  - stage
 before_install:
   - export CHROME_BIN=chromium-browser
   - export DISPLAY=:99.0
@@ -26,7 +30,7 @@ before_install:
   - sudo gcloud docker -a
   - docker build -t us.gcr.io/icanhelpyouwiththat-149304/frontend:latest .
   - sudo docker push us.gcr.io/icanhelpyouwiththat-149304/frontend:latest > /dev/null
-  - gcloud container clusters get-credentials stage --zone us-central1-c && kubectl delete pods -l name=frontend
+  - gcloud config set core/project icanhelpyouwiththat-149304 && sudo gcloud container clusters get-credentials stage --zone us-central1-c && kubectl delete pods -l name=frontend
 before_script:
 - npm install execSync --ignore-scripts
 - npm install -g angular-cli
