@@ -1,0 +1,39 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "es2015",
+    "moduleResolution": "node",
+    "declaration": false,
+    "removeComments": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "sourceMap": true,
+    "pretty": true,
+    "allowUnreachableCode": false,
+    "allowUnusedLabels": false,
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "noImplicitUseStrict": false,
+    "noFallthroughCasesInSwitch": true,
+    "outDir": "../ngfactory",
+    "rootDir": "./",
+    "typeRoots": [ "../node_modules/@types" ],
+    "types": [
+      "core-js",
+      "node",
+      "@types/jasmine",
+      "hammerjs"
+    ]
+  },
+  "angularCompilerOptions": {
+    "debug": true,
+    "genDir": "./upgrade-aot"
+  },
+  "compileOnSave": false,
+  "files": [
+    "app/app.module.ts"
+  ],
+  "exclude": [
+    "dist"
+  ]
+}

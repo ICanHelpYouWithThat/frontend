@@ -17,7 +17,7 @@ interface Profile {
 
 export class SignupComponent implements OnInit {
 
-  private profile: Profile;
+  private profile: Object;
 
   constructor(private _profileService: ProfileService, private _router: Router) {
     this.profile = {
