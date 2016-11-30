@@ -1,13 +1,13 @@
 import {Injectable} from '@angular/core';
 import {Http, Response, RequestOptions, Headers} from '@angular/http';
 import {Observable} from "rxjs";
-import { environment } from '../../environments/environment';
+import { environment } from '../environments/environment';
 import {Credentials} from "crypto";
 
 @Injectable()
 export class ProfileService {
 
-  private url: string;
+  private url: string
   private headers: Headers;
   private options: RequestOptions;
 

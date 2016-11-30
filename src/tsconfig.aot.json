@@ -3,6 +3,7 @@
     "target": "es5",
     "module": "es2015",
     "moduleResolution": "node",
+    "lib": ["dom", "es6"],
     "declaration": false,
     "removeComments": true,
     "emitDecoratorMetadata": true,
@@ -14,26 +15,24 @@
     "noImplicitAny": true,
     "noImplicitReturns": true,
     "noImplicitUseStrict": false,
+    "suppressImplicitAnyIndexErrors": true,
     "noFallthroughCasesInSwitch": true,
-    "outDir": "../ngfactory",
-    "rootDir": "./",
-    "typeRoots": [ "../node_modules/@types" ],
-    "types": [
-      "core-js",
-      "node",
-      "@types/jasmine",
-      "hammerjs"
-    ]
+    "outDir": "../dist",
+    "rootDir": "./app",
+    "typeRoots": [ "../node_modules/@types" ]
   },
   "angularCompilerOptions": {
     "debug": true,
-    "genDir": "./upgrade-aot"
+    "genDir": "aot"
   },
   "compileOnSave": false,
   "files": [
-    "app/app.module.ts"
+    "app/app.module.ts",
+    "app/main.ts"
   ],
   "exclude": [
-    "dist"
+    "dist",
+    "node_modules",
+    "src/aot"
   ]
 }
