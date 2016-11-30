@@ -1,0 +1,38 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: letsencrypt
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    app: letsencrypt
+  template:
+    metadata:
+      name: letsencrypt
+      labels:
+        app: letsencrypt
+    spec:
+      containers:
+      - name: letsencrypt
+        image: docker.io/iameli/kubernetes-letsencrypt
+        imagePullPolicy: Always
+        env:
+          - name: tos
+            value: "true"
+          - name: country
+            value: US
+          - name: state
+            value: Portsmouth
+          - name: town
+            value: Portsmouth
+          - name: organization
+            value: ICHUWT
+          - name: email
+            value: jesse.bowden@me.com
+          - name: secretName
+            value: letsencrypt-ssl
+          - name: acmeServer
+            value: https://acme-staging.api.letsencrypt.org/directory
+          - name: namespace
+            value: default
