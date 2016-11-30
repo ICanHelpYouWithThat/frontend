@@ -11,7 +11,7 @@ import { ProfileService } from "../../services/profile.service";
 
 export class ProfileComponent implements OnInit {
 
-  private profile;
+  private profile: any;
 
 
   constructor(private _profileService: ProfileService, private _router: Router) {

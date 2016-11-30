@@ -10,8 +10,6 @@ import {Router} from '@angular/router'
 
 export class AppComponent {
 
-  private profile;
-
   constructor (private _router: Router) {
     // Check if user has token, if not redirect to login page
     !sessionStorage.getItem('jwt') ? this._router.navigate(['login']) : this._router.navigate(['dashboard']);

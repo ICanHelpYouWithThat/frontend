@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {Http, Response, RequestOptions, Headers} from '@angular/http';
 import {Observable} from "rxjs";
-import { environment } from '../../environments/environment';
+import { environment } from '../environments/environment';
 
 @Injectable()
 export class InviteService {
@@ -22,8 +22,7 @@ export class InviteService {
   }
 
 
-  public invite = (invitation?) => {
-console.log("I AM IN THE INVITE" + JSON.stringify(invitation));
+  public invite = (invitation?:Object) => {
     if (sessionStorage.getItem('jwt')) {
 
       this.options.headers.append('Authorization', sessionStorage.getItem('jwt'));

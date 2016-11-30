@@ -11,7 +11,7 @@ import { ProfileService } from "../../services/profile.service";
 
 export class DashboardComponent implements OnInit {
 
-  private profile;
+  private profile: JSON;
 
   constructor (private _profileService: ProfileService, private _router: Router) {
 

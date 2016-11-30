@@ -30,7 +30,7 @@ RUN ["/bin/bash", "-c", "cd /frontend; source ~/.profile; npm install; npm rebui
 
 WORKDIR /frontend
 
-RUN ["/bin/bash", "-c", "cd /frontend; source ~/.profile; npm run build"]
+RUN ["/bin/bash", "-c", "cd /frontend; source ~/.profile; npm run deploy"]
 
 WORKDIR ./dist
 
