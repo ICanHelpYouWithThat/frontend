@@ -46,5 +46,5 @@ RUN ["/bin/bash", "-c", "mkdir /logs && echo -n > /logs/access.log"]
 VOLUME ["/etc/nginx"]
 
 #setup the port
-EXPOSE  3001
-EXPOSE  3002
+EXPOSE  3001 3002 1111
+

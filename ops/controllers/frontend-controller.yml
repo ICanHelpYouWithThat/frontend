@@ -17,9 +17,9 @@ spec:
         version: v0.0.0
     spec:
       volumes:
-        - name: ssl
+        - name: tls
           secret:
-            secretName: letsencrypt-ssl
+            secretName: tls
       containers:
         - name: frontend
           image: us.gcr.io/icanhelpyouwiththat-149304/frontend:latest
@@ -33,6 +33,6 @@ spec:
             - containerPort: 3002
               name: https
           volumeMounts:
-            - name: ssl
+            - name: tls
               mountPath: /keys
               readOnly: true
