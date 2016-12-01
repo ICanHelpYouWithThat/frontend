@@ -13,5 +13,9 @@ spec:
         name: https
         targetPort: 3001
         protocol: TCP
+      - port: 80
+        name: http
+        targetPort: 3001
+        protocol: TCP
   selector:
     name: frontend

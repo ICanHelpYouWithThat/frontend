@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: letsencrypt
-        image: docker.io/iameli/kubernetes-letsencrypt
+        image: us.gcr.io/icanhelpyouwiththat-149304/kubernetes-letsencrypt:latest
         imagePullPolicy: Always
         env:
           - name: tos
@@ -31,7 +31,7 @@ spec:
           - name: email
             value: jesse.bowden@me.com
           - name: secretName
-            value: letsencrypt-ssl
+            value: tls
           - name: acmeServer
             value: https://acme-staging.api.letsencrypt.org/directory
           - name: namespace
