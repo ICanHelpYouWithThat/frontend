@@ -2,7 +2,7 @@ FROM us.gcr.io/icanhelpyouwiththat-149304/nginx-npm:latest
 MAINTAINER Jesse Bowden <jesse@gemr.com>
 
 COPY    ./ops/nginx.conf /etc/nginx/nginx.conf
-
+COPY    ./ops/sites-enabled /etc/nginx/sites-enabled
 COPY . /frontend
 
 
