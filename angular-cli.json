@@ -19,6 +19,7 @@
       "mobile": false,
       "styles": [
         "styles.css",
+        "../node_modules/@angular/material/core/theming/prebuilt/deeppurple-amber.css",
         "themes/ichuwt.theme.scss"
       ],
       "scripts": [],
