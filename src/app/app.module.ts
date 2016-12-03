@@ -10,6 +10,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { InviteComponent } from './components/invite/invite.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { ProfileComponent } from './components/profile/profile.component';
+import { AdminComponent } from './components/admin/admin.component';
 import { MaterialModule } from '@angular/material';
 
 const appRoutes: Routes = [
@@ -18,6 +19,7 @@ const appRoutes: Routes = [
   {path: 'dashboard', component: DashboardComponent},
   {path: 'invite', component: InviteComponent},
   {path: 'signup', component: SignupComponent},
+  {path: 'admin', component: AdminComponent},
   {path: 'profile', component: ProfileComponent}
 ];
 
@@ -28,6 +30,7 @@ const appRoutes: Routes = [
     DashboardComponent,
     InviteComponent,
     ProfileComponent,
+    AdminComponent,
     SignupComponent
   ],
   imports: [
