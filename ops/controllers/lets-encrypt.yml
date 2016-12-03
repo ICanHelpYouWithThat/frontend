@@ -23,13 +23,13 @@ spec:
           - name: country
             value: US
           - name: state
-            value: Portsmouth
+            value: NJ
           - name: town
-            value: Portsmouth
+            value: Mendham
           - name: organization
-            value: ICHUWT
+            value: icanhlpyouwiththat
           - name: email
-            value: jesse.bowden@me.com
+            value: zmagaw@gmail.com
           - name: secretName
             value: tls
           - name: acmeServer
