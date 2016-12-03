@@ -1,28 +1,8 @@
-FROM nginx:latest
+FROM us.gcr.io/icanhelpyouwiththat-149304/nginx-npm:latest
 MAINTAINER Jesse Bowden <jesse@gemr.com>
-RUN rm /bin/sh && ln -sf /bin/bash /bin/sh
-RUN sed -i 's/^mesg n$/tty -s \&\& mesg n/g' /root/.profile
-
-# Declare constants
-ENV NVM_VERSION v0.32.1
-ENV NODE_VERSION 7.1.0
-
-ENV NVM_DIR /usr/local/nvm
-ENV NODE_PATH $NVM_DIR/v$NODE_VERSION/lib/node_modules
-ENV PATH      $NVM_DIR/v$NODE_VERSION/bin:$PATH
-
-# Install pre-reqs
-RUN apt-get update && apt-get install -y curl build-essential npm git gettext
-
-# Install nvm with node and npm
-RUN curl https://raw.githubusercontent.com/creationix/nvm/$NVM_VERSION/install.sh | bash \
-    && source $NVM_DIR/nvm.sh \
-    && nvm install $NODE_VERSION \
-    && nvm alias default $NODE_VERSION \
-    && nvm use default
 
 COPY    ./ops/nginx.conf /etc/nginx/nginx.conf
-
+COPY    ./ops/sites-enabled /etc/nginx/sites-enabled
 COPY . /frontend
 
 
@@ -30,7 +10,7 @@ RUN ["/bin/bash", "-c", "cd /frontend; source ~/.profile; npm install; npm rebui
 
 WORKDIR /frontend
 
-RUN ["/bin/bash", "-c", "cd /frontend; source ~/.profile; npm run build"]
+RUN ["/bin/bash", "-c", "cd /frontend; source ~/.profile; npm run deploy"]
 
 WORKDIR ./dist
 
@@ -46,5 +26,5 @@ RUN ["/bin/bash", "-c", "mkdir /logs && echo -n > /logs/access.log"]
 VOLUME ["/etc/nginx"]
 
 #setup the port
-EXPOSE  3001
-EXPOSE  3002
+EXPOSE  3001 3002 1111
+

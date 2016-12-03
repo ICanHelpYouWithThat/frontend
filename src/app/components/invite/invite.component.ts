@@ -12,9 +12,9 @@ import { ProfileService } from '../../services/profile.service';
 
 export class InviteComponent implements OnInit {
 
-  private invitation;
+  private invitation: any;
   private email: string;
-  private profile;
+  private profile: any;
 
  private re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
@@ -33,11 +33,10 @@ export class InviteComponent implements OnInit {
 
     this.profile = "";
   }
-  eventHandler(event) {
+  eventHandler(event:any) {
     if(event.keyCode == 13){
       this.addEmail();
     }
-
   }
 
   addEmail() {

@@ -9,6 +9,10 @@ metadata:
 spec:
   type: NodePort
   ports:
+      - port: 443
+        name: https
+        targetPort: 3002
+        protocol: TCP
       - port: 80
         name: http
         targetPort: 3001
