@@ -30,6 +30,8 @@ spec:
           ports:
             - containerPort: 3002
               name: https
+            - containerPort: 3002
+              name: https
           volumeMounts:
             - name: tls
               mountPath: /keys
