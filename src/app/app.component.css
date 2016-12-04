@@ -4,7 +4,7 @@
   min-width: 100px;
   width: 30vw;
   left: calc((100vw - 30vw)/2);
-  top: calc((100vh - 20vh)/4);
+  top: calc((100vh - 20vh)/8);
 }
 
 .login_input {
