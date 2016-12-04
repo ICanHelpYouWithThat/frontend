@@ -24,7 +24,5 @@ spec:
             value: production
           command: ["/bin/bash","-c", "nginx;"]
           ports:
-            - containerPort: 3001
-              name: http
             - containerPort: 3002
-              name: https
+              name: http
