@@ -7,7 +7,7 @@ import {Credentials} from "crypto";
 @Injectable()
 export class ProfileService {
 
-  private url: string
+  private url: string;
   private headers: Headers;
   private options: RequestOptions;
 
