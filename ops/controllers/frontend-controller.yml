@@ -16,6 +16,10 @@ spec:
         name: frontend
         version: v0.0.0
     spec:
+      volumes:
+        - name: tls
+          secret:
+            secretName: tls
       containers:
         - name: frontend
           image: us.gcr.io/icanhelpyouwiththat-149304/frontend:latest
@@ -25,4 +29,8 @@ spec:
           command: ["/bin/bash","-c", "nginx;"]
           ports:
             - containerPort: 3002
-              name: http
+              name: https
+          volumeMounts:
+            - name: tls
+              mountPath: /keys
+              readOnly: true
