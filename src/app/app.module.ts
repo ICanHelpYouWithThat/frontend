@@ -11,7 +11,7 @@ import { InviteComponent } from './components/invite/invite.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { AdminComponent } from './components/admin/admin.component';
-
+import { MaterialModule } from '@angular/material';
 
 const appRoutes: Routes = [
   {path: '', component: AppComponent},
