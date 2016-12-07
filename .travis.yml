@@ -19,35 +19,13 @@ env:
   - GCLOUD_PROJECT='icanhelpyouwiththat-149304'
   - PROJECT_ID="${GCLOUD_PROJECT}"
   - ZONE='us-central1-a'
-  - CLUSTER_ID='stage'
+  - CLUSTER_ID='beta'
 branches:
   only:
   - master
-  - stage
+  - $CLUSTER_ID
 before_install:
-  - export CHROME_BIN=chromium-browser
-  - export DISPLAY=:99.0
-  - export CXX=g++-4.8
-  - sh -e /etc/init.d/xvfb start
-  - if [ ! -d "${HOME}/google-cloud-sdk" ]; then curl https://sdk.cloud.google.com | bash; fi
-  - gcloud --quiet version
-  - gcloud --quiet components install kubectl
-  - kubectl version --client=true
-  - if [[ $TRAVIS_OS_NAME == "linux" ]]; then export CXX=g++-4.8; fi
-  - echo $GCLOUD_KEY | base64 --decode > ${PWD}/gcloud.json
-  - export GOOGLE_APPLICATION_CREDENTIALS="${PWD}/gcloud.json"
-  - export KUBECONFIG="${PWD}/.kube/config"
-  - gcloud --quiet auth activate-service-account --key-file "${GOOGLE_APPLICATION_CREDENTIALS}"
-  - gcloud --quiet config set project "${PROJECT_ID}"
-  - gcloud --quiet config set compute/zone "${ZONE}"
-  - kubectl config use-context "${CLUSTER_ID}"
-  - ssh-keygen -f ~/.ssh/google_compute_engine -N ""
-  - gcloud docker -a
-  - docker build -t us.gcr.io/icanhelpyouwiththat-149304/frontend:latest .
-  - docker push us.gcr.io/icanhelpyouwiththat-149304/frontend:latest > /dev/null
-  - gcloud container clusters get-credentials stage --zone us-central1-a
-  - export KUBECONFIG="${PWD}/.kube/config"
-  - kubectl delete pods -l name=frontend
+  - ./ops/scripts/deploy.sh
 before_script:
 - npm install execSync --ignore-scripts
 - npm install -g angular-cli
