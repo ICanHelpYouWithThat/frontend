@@ -45,9 +45,6 @@ else
         # Create environemnt with google cloud monitoring 8 core for production and stage
         echo "Environmant doesn't exist.  Creating..."
         gcloud container clusters create $CLUSTER_ID -z ${ZONE} --machine-type n1-standard-1 --enable-cloud-logging --enable-cloud-monitoring
-
-    fi
-
 fi
 
 
