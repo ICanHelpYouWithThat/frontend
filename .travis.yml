@@ -23,6 +23,7 @@ env:
 branches:
   only:
   - master
+  - stage
   - $CLUSTER_ID
 before_install:
   - ./ops/scripts/deploy.sh
