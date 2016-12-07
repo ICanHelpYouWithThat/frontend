@@ -19,7 +19,7 @@ env:
   - GCLOUD_PROJECT='icanhelpyouwiththat-149304'
   - PROJECT_ID="${GCLOUD_PROJECT}"
   - ZONE='us-central1-a'
-  - CLUSTER_ID='beta'
+  - CLUSTER_ID='stage'
 branches:
   only:
   - master
