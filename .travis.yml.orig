@@ -12,35 +12,51 @@ apt:
   - google-chrome-stable
   - google-chrome-beta
   - g++-4.8
+env:
+  global:
+  - CLOUDSDK_CORE_DISABLE_PROMPTS=1
+  - PATH="${HOME}/google-cloud-sdk/bin:${PATH}"
+  - GCLOUD_PROJECT='icanhelpyouwiththat-149304'
+  - PROJECT_ID="${GCLOUD_PROJECT}"
+  - ZONE='us-central1-a'
+  - CLUSTER_ID='beta'
 branches:
   only:
   - master
-  - stage
+  - $CLUSTER_ID
 before_install:
+<<<<<<< Updated upstream
+  - ./ops/scripts/deploy.sh
+=======
   - export CHROME_BIN=chromium-browser
   - export DISPLAY=:99.0
   - export CXX=g++-4.8
   - sh -e /etc/init.d/xvfb start
-  - gcloud version
-  - sudo gcloud --quiet components update kubectl
-  - GCLOUDDIR=$(which gcloud)
-  - echo $GCLOUD_KEY | base64 --decode > gcloud.json
-  - sudo gcloud auth activate-service-account $GCLOUD_EMAIL --key-file gcloud.json
+  - if [ ! -d "${HOME}/google-cloud-sdk" ]; then curl https://sdk.cloud.google.com | bash; fi
+  - gcloud --quiet version
+  - gcloud --quiet components install kubectl
+  - kubectl version --client=true
+  - if [[ $TRAVIS_OS_NAME == "linux" ]]; then export CXX=g++-4.8; fi
+  - echo $GCLOUD_KEY | base64 --decode > ${PWD}/gcloud.json
+  - export GOOGLE_APPLICATION_CREDENTIALS="${PWD}/gcloud.json"
+  - export KUBECONFIG="${PWD}/.kube/config"
+  - gcloud --quiet auth activate-service-account --key-file "${GOOGLE_APPLICATION_CREDENTIALS}"
+  - gcloud --quiet config set project "${PROJECT_ID}"
+  - gcloud --quiet config set compute/zone "${ZONE}"
+  - kubectl config use-context "${CLUSTER_ID}"
   - ssh-keygen -f ~/.ssh/google_compute_engine -N ""
-  - sudo gcloud docker -a
+  - gcloud docker -a
   - docker build -t us.gcr.io/icanhelpyouwiththat-149304/frontend:latest .
-  - sudo docker push us.gcr.io/icanhelpyouwiththat-149304/frontend:latest > /dev/null
-<<<<<<< HEAD
-  - sudo gcloud container clusters get-credentials stage --zone us-central1-c && kubectl delete pods -l name=frontend
-=======
-  - gcloud config set core/project icanhelpyouwiththat-149304 && sudo gcloud container clusters get-credentials stage --zone us-central1-c && kubectl delete pods -l name=frontend
->>>>>>> 707b7c872640a9187b59ce62fe93f7975ca360c3
+  - docker push us.gcr.io/icanhelpyouwiththat-149304/frontend:latest > /dev/null
+  - gcloud container clusters get-credentials $CLUSTER_id --zone us-central1-a
+  - export KUBECONFIG="${PWD}/.kube/config"
+  - kubectl delete pods -l name=frontend
+>>>>>>> Stashed changes
 before_script:
 - npm install execSync --ignore-scripts
 - npm install -g angular-cli
 - npm install -g karma
 - npm install
-- ng build
 script: karma start karma.conf.js --single-run
 notifications:
   slack:
