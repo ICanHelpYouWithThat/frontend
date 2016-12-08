@@ -1,4 +1,5 @@
 import { AppComponent } from './app.component';
+import { AuthGuard } from './auth-guard.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
@@ -18,7 +19,7 @@ import { AppRoutingModule, routableComponents } from './app-routing.module';
     MaterialModule.forRoot(),
     AppRoutingModule
   ],
-  providers: [ProfileService],
+  providers: [ProfileService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

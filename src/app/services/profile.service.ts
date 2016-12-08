@@ -7,11 +7,14 @@ import {Credentials} from "crypto";
 @Injectable()
 export class ProfileService {
 
-  private url: string;
+  public redirectUrl: string;
+
   private headers: Headers;
   private options: RequestOptions;
+  private url: string;
 
   constructor (private _http: Http) {
+    this.redirectUrl = '';
     this.url = environment.host + '/profile/';
     this.headers = new Headers({
       'Content-Type': 'application/json',
@@ -75,5 +78,7 @@ export class ProfileService {
       .map((response: Response) => response.json())
       .catch((error) => Observable.throw(error.json() || 'Server error'))
   };
+
+  public isLoggedIn = () => localStorage.getItem('jwt')
 
 }

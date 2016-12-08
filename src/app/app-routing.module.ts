@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
+import { AuthGuard } from './auth-guard.service';
+
 import { AdminComponent } from './components/admin/admin.component';
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
@@ -11,18 +13,18 @@ import { SignupComponent } from './components/signup/signup.component';
 
 const routes: Routes = [
   {path: '', pathMatch: 'full', redirectTo: 'dashboard'},
-  {path: '**', redirectTo: 'dashboard'},
-  {path: 'admin', component: AdminComponent},
-  {path: 'dashboard', component: DashboardComponent},
-  {path: 'invite', component: InviteComponent},
+  {path: 'admin', component: AdminComponent, canActivate: [AuthGuard]},
+  {path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard]},
+  {path: 'invite', component: InviteComponent, canActivate: [AuthGuard]},
   {path: 'login', component: LoginComponent},
-  {path: 'profile', component: ProfileComponent},
-  {path: 'signup', component: SignupComponent}
+  {path: 'profile', component: ProfileComponent, canActivate: [AuthGuard]},
+  {path: 'signup', component: SignupComponent},
+  {path: '**', redirectTo: 'dashboard'},
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  imports: [RouterModule.forRoot(routes)]
 })
 
 export class AppRoutingModule {}
