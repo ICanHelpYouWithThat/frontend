@@ -1,49 +1,24 @@
+import { AppComponent } from './app.component';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import { RouterModule, Routes } from '@angular/router';
-
-import { AppComponent } from './app.component';
-import { LoginComponent } from './components/login/login.component';
-import { DashboardComponent } from './components/dashboard/dashboard.component';
-import { InviteComponent } from './components/invite/invite.component';
-import { SignupComponent } from './components/signup/signup.component';
-import { ProfileComponent } from './components/profile/profile.component';
-import { AdminComponent } from './components/admin/admin.component';
 import { MaterialModule } from '@angular/material';
+import { NgModule } from '@angular/core';
+import { ProfileService } from './services/profile.service';
 import { PropertyPipe } from "./pipes/property.pipe";
 
-
-const appRoutes: Routes = [
-  {path: '', component: AppComponent},
-  {path: 'login', component: LoginComponent},
-  {path: 'dashboard', component: DashboardComponent},
-  {path: 'invite', component: InviteComponent},
-  {path: 'signup', component: SignupComponent},
-  {path: 'admin', component: AdminComponent},
-  {path: 'profile', component: ProfileComponent}
-];
+import { AppRoutingModule, routableComponents } from './app-routing.module';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    LoginComponent,
-    DashboardComponent,
-    InviteComponent,
-    ProfileComponent,
-    AdminComponent,
-    SignupComponent,
-    PropertyPipe
-  ],
+  declarations: [routableComponents, PropertyPipe],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     MaterialModule.forRoot(),
-    RouterModule.forRoot(appRoutes),
+    AppRoutingModule
   ],
-  providers: [],
+  providers: [ProfileService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

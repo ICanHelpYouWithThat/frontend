@@ -1,5 +1,4 @@
-import {Component, ViewEncapsulation, OnInit} from '@angular/core';
-import {Router} from '@angular/router'
+import { Component, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -8,11 +7,4 @@ import {Router} from '@angular/router'
   styleUrls: ['./app.component.css'],
 })
 
-export class AppComponent {
-
-  constructor (private _router: Router) {
-    // Check if user has token, if not redirect to login page
-    !sessionStorage.getItem('jwt') ? this._router.navigate(['login']) : this._router.navigate(['dashboard']);
-  }
-
-}
+export class AppComponent {}
