@@ -1,5 +1,4 @@
 import { Component, ViewEncapsulation, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { ProfileService } from '../../services/profile.service';
 
 interface Credentials {
@@ -18,7 +17,7 @@ export class LoginComponent implements OnInit {
 
   private credentials: Credentials;
 
-  constructor(private _profileService: ProfileService, private _router: Router) {
+  constructor(private _profileService: ProfileService) {
     this.credentials = {
       userid: '',
       password: ''
@@ -27,16 +26,7 @@ export class LoginComponent implements OnInit {
 
   login () {
     this._profileService
-      .login(this.credentials)
-      .subscribe(
-        (response) => {
-          sessionStorage.setItem('jwt', response.token);
-          this._router.navigate(['']);
-        },
-        (error) => {
-          console.log(error.message)
-        }
-      )
+      .login(this.credentials);
   }
 
   ngOnInit() {
