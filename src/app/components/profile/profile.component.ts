@@ -18,4 +18,12 @@ export class ProfileComponent {
     this.profile = this._profileService.profile;
   }
 
+  update() {
+    this._profileService.updateProfile(this.profile)
+      .subscribe(
+        () => console.log('saved'),
+        (error) => console.log('Error: ' + error)
+      );
+  }
+
 }

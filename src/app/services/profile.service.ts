@@ -42,10 +42,10 @@ export class ProfileService {
 
     if (this.isLoggedIn()) {
       let url = profileId ? this.url + profileId : this.url;
+      let options = this.options;
+      options.headers.append('Authorization', 'Bearer ' + localStorage.getItem('jwt'));
 
-      this.options.headers.append('Authorization', 'Bearer ' + localStorage.getItem('jwt'));
-
-      return this._http.get(url, this.options)
+      return this._http.get(url, options)
         .map((response: Response) => response.json())
         .catch((error) => Observable.throw(error.json() || 'Server error'))
     }
@@ -53,9 +53,12 @@ export class ProfileService {
     return Observable.throw('Unauthorized, please login')
   };
 
-  public updateProfile = (body: JSON) => {
+  public updateProfile = (body: Profile) => {
     if (this.isLoggedIn()) {
-      return this._http.put(this.url, JSON.stringify(body), this.options)
+      let options = this.options;
+      options.headers.append('Authorization', 'Bearer ' + localStorage.getItem('jwt'));
+
+      return this._http.put(this.url + this.profile._id, JSON.stringify(body), options)
         .map((response: Response) => response.json())
         .catch((error) => Observable.throw(error.json() || 'Server error'))
     }
@@ -67,10 +70,10 @@ export class ProfileService {
 
     if (this.isLoggedIn()) {
       let url = this.url + profileId;
+      let options = this.options;
+      options.headers.append('Authorization', 'Bearer ' + localStorage.getItem('jwt'));
 
-      this.options.headers.append('Authorization', 'Bearer ' + localStorage.getItem('jwt'));
-
-      return this._http.delete(url, this.options)
+      return this._http.delete(url, options)
         .map((response: Response) => response.json())
         .catch((error) => Observable.throw(error.json() || 'Server error'))
     }
@@ -86,9 +89,9 @@ export class ProfileService {
       .catch((error) => Observable.throw(error.json() || 'Server error'))
       .subscribe(
         (response) => {
-          localStorage.setItem('profile', response.profile) && (this.profile = response.profile);
+          localStorage.setItem('profile', JSON.stringify(response.profile)) && (this.profile = response.profile);
           localStorage.setItem('jwt', response.token);
-          this._router.navigate([this.redirectUrl || '']);
+          this._router.navigate(['dashboard']);
           this.redirectUrl = '';
         },
         (error) => {
