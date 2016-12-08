@@ -12,6 +12,8 @@ import { SignupComponent } from './components/signup/signup.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { AdminComponent } from './components/admin/admin.component';
 import { MaterialModule } from '@angular/material';
+import { PropertyPipe } from "./pipes/property.pipe";
+
 
 const appRoutes: Routes = [
   {path: '', component: AppComponent},
@@ -31,7 +33,8 @@ const appRoutes: Routes = [
     InviteComponent,
     ProfileComponent,
     AdminComponent,
-    SignupComponent
+    SignupComponent,
+    PropertyPipe
   ],
   imports: [
     BrowserModule,

@@ -25,14 +25,21 @@
           All Profiles
         </template>
         <h1>Listing of profiles where you can select, view and update specific profile</h1>
-        <p>...</p>
+
+        <md-list>
+          <md-list-item *ngFor="let profile of profiles">{{profile.id}} - {{ profile.name }} - {{ profile.status }}</md-list-item>
+        </md-list>
+
       </md-tab>
       <md-tab>
         <template md-tab-label>
           Pending Profiles
         </template>
         <h1>List of Profiles which need to be approved</h1>
-        <p>...</p>
+        <md-list>
+          <md-list-item *ngFor="let profile of (profiles | searchProfile)">{{profile.id}} - {{ profile.name }} - {{ profile.status }}</md-list-item>
+        </md-list>
+
       </md-tab>
       <md-tab>
         <template md-tab-label>
