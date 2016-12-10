@@ -4,14 +4,18 @@
   min-width: 100px;
   width: 30vw;
   left: calc((100vw - 30vw)/2);
-  top: calc((100vh - 20vh)/8);
+  top: calc((100vh - 20vh)/4);
 }
 
-.login_input {
+.invite_input {
+  width: 80%;
+}
+
+.invite_message {
   width: 100%;
 }
 
-.login_button {
+.invite_button {
   position: relative;
   width: 100%;
   background-color: darkcyan;
@@ -19,10 +23,10 @@
   margin-top: 2em!important;
 }
 
-.login_footer {
+.invite_footer {
   margin-top: 1.5em!important;
 }
 
 .content {
-  display: block; position: relative; width: 100%; height: auto; padding: 0; margin: 0;
+  padding: 0;
 }

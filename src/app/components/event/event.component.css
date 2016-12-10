@@ -1,0 +1,16 @@
+.profile_input {
+  width: 100%;
+}
+
+.profile_text {
+  width: 100%;
+  rows: 5;
+}
+
+.profile_button {
+  position: relative;
+  width: 100%;
+  background-color: darkcyan;
+  color: white;
+  margin-top: 2em!important;
+}

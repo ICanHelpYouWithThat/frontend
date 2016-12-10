@@ -1,0 +1,38 @@
+language: node_js
+node_js:
+- '7'
+services:
+  - docker
+addons:
+apt:
+  sources:
+  - google-chrome
+  - ubuntu-toolchain-r-test
+  packages:
+  - google-chrome-stable
+  - google-chrome-beta
+  - g++-4.8
+env:
+  global:
+  - CLOUDSDK_CORE_DISABLE_PROMPTS=1
+  - PATH="${HOME}/google-cloud-sdk/bin:${PATH}"
+  - GCLOUD_PROJECT='icanhelpyouwiththat-149304'
+  - PROJECT_ID="${GCLOUD_PROJECT}"
+  - ZONE='us-central1-a'
+  - CLUSTER_ID='stage'
+branches:
+  only:
+  - master
+  - stage
+  - $CLUSTER_ID
+before_install:
+  - ./ops/scripts/deploy.sh
+before_script:
+- npm install execSync --ignore-scripts
+- npm install -g angular-cli
+- npm install -g karma
+- npm install
+script: karma start karma.conf.js --single-run
+notifications:
+  slack:
+    secure: dtIuScIZ7SUzlpFhZFahpfGGK1H2SvbaHHVpxcXT9XXyDseVKxd3lMkv5VWX/0M6QVoGBabokxNHNfqlZDZ6ld2TvPoIelxd2To5PdB4ixUPz1nqvJ222X5trwLPvm42/ThIzUR2zri9ayL0T0tn5x1/68e4p3LlujB5xeefLx+/3zI8R/eYlEvCQNlcvPLM8sC5pgsWItzSXzAA+hq0KfpL/nwgVG6+WU0Yl8CNgZ2zwEz1PCwKRaegSbJTjstJCod8x/6m+Qj/AGSevqq/Gl6AeZQyiLwyaQvmz3Wls0cnDJaxCUAy4PtLfaH7rymxsqYWIrBP0fnjSm4dhZw2i3PKclnUoCX1G+/woiIT1z521SkqRmEd33z0c68Vg1KETq1XRGXQfkZAJvVrYtcJwZWJEP/OkuU5jjKaOQ+OADiKX3pOkaqBoMCUG0xBrk9qtIC7zXxK7/h2pdFWapx5LPQnCr8TRKKhCo8bIDfGdUGmrU4RqcQTWwXxD1FXJnWh+/1nNfHsjgAy36+nfCn5Vr0I6hua8dhFyiyw5MCAWaW/QQ0EaHbMfAtgUxMB/R85qlTOYIBClkCEnDeDe6DxrcCXkYa/C1yR/tF/JB3D0jycOxjbcLfO3enQxp3zFOGCBvJHJXyW8P/EEEACD3aaqQvQqx4PaXeIJz3FdYdVIIw=
