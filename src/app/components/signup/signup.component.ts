@@ -1,12 +1,7 @@
 import { Component, ViewEncapsulation, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Profile } from '../profile/Profile';
 import { ProfileService } from '../../services/profile.service';
-
-interface Profile {
-  name: string,
-  email: string,
-  mission: string
-}
 
 @Component({
   templateUrl: 'signup.component.html',
@@ -17,14 +12,10 @@ interface Profile {
 
 export class SignupComponent implements OnInit {
 
-  private profile: Object;
+  private profile: Profile;
 
   constructor(private _profileService: ProfileService, private _router: Router) {
-    this.profile = {
-      name: '',
-      email: '',
-      mission: ''
-    }
+    this.profile = this._profileService.profile;
   }
 
   signup () {

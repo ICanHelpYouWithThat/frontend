@@ -1,6 +1,7 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 import { Router } from '@angular/router';
 import { InviteService } from '../../services/invite.service';
+import { Profile } from '../profile/Profile';
 import { ProfileService } from '../../services/profile.service';
 
 @Component({
@@ -10,13 +11,13 @@ import { ProfileService } from '../../services/profile.service';
   providers: [InviteService, ProfileService]
 })
 
-export class InviteComponent implements OnInit {
+export class InviteComponent {
 
   private invitation: any;
   private email: string;
-  private profile: any;
+  private profile: Profile;
 
- private re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  private re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
 
   constructor (private _profileService: ProfileService, private _inviteService: InviteService, private _router: Router) {
@@ -29,9 +30,9 @@ export class InviteComponent implements OnInit {
         You're getting this...
         blah blah blah
         Orange Menace blah `
-    }
+    };
 
-    this.profile = "";
+    this.profile = this._profileService.profile;
   }
   eventHandler(event:any) {
     if(event.keyCode == 13){
@@ -40,48 +41,26 @@ export class InviteComponent implements OnInit {
   }
 
   addEmail() {
-    console.log("Number of invites: " + this.profile.invites)
+    console.log("Number of invites: " + this.profile.invites);
     this.email = this.email.trim();
-    if(this.email.length > 0)
-    {
-    var anArray = this.email.split(",");
-    //Check the number of invites this user has to ensure they have invites left.
-    if(anArray.length <= this.profile.invites) {
-      for (var i = 0; i < anArray.length; i++) {
-       if(this.re.test(anArray[i]))
-       {
-         this.profile.invites--;
-         this.invitation.emails.push(anArray[i]);
-       }
-      }
-      this.email = "";
-    }
-    }
-  }
-  ngOnInit () {
-    /*
-    //will add in profile service call when getting the complete service backend stood up
-    //
-    this._profileService.getProfile()
-      .subscribe(
-        (response) => {
-          this.profile = response.profile
-        },
-        (error) => {
-          this._router.navigate(['login']);
+    if(this.email.length > 0) {
+      const emails = this.email.split(",");
+      //Check the number of invites this user has to ensure they have invites left.
+      if(emails.length <= this.profile.invites) {
+        for (let i = 0; i < emails.length; i++) {
+         if(this.re.test(emails[i]))
+         {
+           this.profile.invites--;
+           this.invitation.emails.push(emails[i]);
+         }
         }
-      )
-     */
-    // Eliminate the hardcoded Profile
-    this.profile = {
-      "name": "Zach Magaw",
-      "invites" : 10
+        this.email = "";
+      }
     }
-    // Eliminate the hardcoded Profile
-
   }
 
-invite () {
+
+  invite () {
     console.log("WE MADE IT");
     this._inviteService
       .invite(this.invitation)

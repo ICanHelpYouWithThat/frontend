@@ -1,5 +1,5 @@
-import { Component, ViewEncapsulation, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, ViewEncapsulation} from '@angular/core';
+import { Profile } from '../profile/Profile';
 import { ProfileService } from "../../services/profile.service";
 
 @Component({
@@ -9,23 +9,12 @@ import { ProfileService } from "../../services/profile.service";
   providers: [ProfileService]
 })
 
-export class DashboardComponent implements OnInit {
+export class DashboardComponent {
 
-  private profile: JSON;
+  private profile: Profile;
 
-  constructor (private _profileService: ProfileService, private _router: Router) {
-
+  constructor (private _profileService: ProfileService) {
+    this.profile = this._profileService.profile;
   }
 
-  ngOnInit () {
-    this._profileService.getProfile()
-      .subscribe(
-        (response) => {
-          this.profile = response.profile
-        },
-        (error) => {
-          this._router.navigate(['login']);
-        }
-      )
-  }
 }
