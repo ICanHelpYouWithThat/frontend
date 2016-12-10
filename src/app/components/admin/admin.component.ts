@@ -71,7 +71,25 @@ export class AdminComponent implements OnInit {
 
       },
         {
-          "id": "12346",
+          "id": "12348",
+          "name": "Billy Smith",
+          "karma": "5",
+          "email": "bob@smith.com",
+          "phone": "123-123-1234",
+          "geolocation": "37.4211274197085,-122.0855988802915",
+          "zipcode": "12345",
+          "type": "1",
+          "mission": "This is the mission of the user - individual mission or organizations mission.",
+          "admin": "1",
+          "likes": "52",
+          "invites": "50",
+          "status": "Requested",
+          "password": "thisismypassword",
+          "linked_acct": "test"
+
+        },
+        {
+          "id": "12347",
           "name": "Billy Smith",
           "karma": "5",
           "email": "bob@smith.com",

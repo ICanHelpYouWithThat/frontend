@@ -76,4 +76,12 @@ export class ProfileService {
       .catch((error) => Observable.throw(error.json() || 'Server error'))
   };
 
+  public confirmInvite = (credentials:Credentials) => {
+    let url = this.url + 'login';
+
+    return this._http.post(url, JSON.stringify(credentials), this.options)
+      .map((response: Response) => response.json())
+      .catch((error) => Observable.throw(error.json() || 'Server error'))
+  };
+
 }

@@ -11,6 +11,7 @@ import { InviteComponent } from './components/invite/invite.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { AdminComponent } from './components/admin/admin.component';
+import { ConfirmComponent } from './components/confirm/confirm.component';
 import { MaterialModule } from '@angular/material';
 import { PropertyPipe } from "./pipes/property.pipe";
 
@@ -22,6 +23,7 @@ const appRoutes: Routes = [
   {path: 'invite', component: InviteComponent},
   {path: 'signup', component: SignupComponent},
   {path: 'admin', component: AdminComponent},
+  {path: 'confirm', component: ConfirmComponent},
   {path: 'profile', component: ProfileComponent}
 ];
 
@@ -33,6 +35,7 @@ const appRoutes: Routes = [
     InviteComponent,
     ProfileComponent,
     AdminComponent,
+    ConfirmComponent,
     SignupComponent,
     PropertyPipe
   ],
