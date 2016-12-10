@@ -35,7 +35,7 @@ if [[ "$ENV_CHECK" == $CLUSTER_ID* && "$ENV_CHECK" == *"${ZONE}"* ]]; then
     # If it does don't create.
     echo "Environment already exists."
     gcloud container clusters get-credentials $CLUSTER_ID -z ${ZONE}
-    kubectl config use-context "${CLUSTER_ID}"
+#    kubectl config use-context "${CLUSTER_ID}"
 
     export KUBECONFIG="${PWD}/.kube/config"
 
