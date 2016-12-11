@@ -11,6 +11,7 @@ export class LoginComponent implements OnInit {
   private credentials: ProfileCredentials;
   public isSubmitVisible: boolean = false;
   public loginText: string = '';
+  public loginSuccesss: boolean = false;
 
   constructor(
     private _profileService: ProfileService
@@ -21,17 +22,22 @@ export class LoginComponent implements OnInit {
     };
   }
 
-  // emailListener (event: any) {
-  //
-  //     this.loginText = 'Welcome ' + event.target.value;
-  //
-  //     event.preventDefault();
-  //     this.isSubmitVisible = true;
-  // }
+  emailListener (event: any) {
 
-  login () {
-    this._profileService
-      .login(this.credentials);
+    this.loginText = 'Welcome ' + event.target.value;
+
+    event.preventDefault();
+    this.isSubmitVisible = true;
+  }
+
+  login (event: any) {
+    if (event.key === 'Enter') {
+      this.loginSuccesss = true;
+      setTimeout(() => {
+        this._profileService
+          .login(this.credentials);
+      }, 1000);
+    }
   }
 
   ngOnInit(): void {}

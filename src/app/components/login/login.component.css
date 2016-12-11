@@ -33,35 +33,33 @@
   outline: 0;
   border: none;
   text-align: center;
-  transition: .25s;
+  transition: 1s;
 }
+
+.login_input.on-login {
+  animation: fadein 1s;
+}
+
+@keyframes fadein {
+  from { opacity: 1; }
+  to   { opacity: 0; }
+}
+
 .header {
   display: flex;
-  padding: 0;
   padding-top: 7em;
   margin: 0;
   justify-content: center;
-  transition: .25s;
+  transition: 1s;
 }
 
-.logo {
-  position: absolute;
-  height: 15em;
-  width: 15em;
-  opacity: .2;
-  background: url("../../../assets/logo.png") no-repeat center center;
-  background-size: cover;
-  transition: .25s;
+.header.on-login {
+  padding-top: 1em;
 }
 
 .header_text {
   width: auto;
   margin-top: 1em;
-  transition: .25s;
-}
-
-.header_content {
-  display: inline-block;
   transition: .25s;
 }
 
@@ -75,6 +73,10 @@
   transition: .25s;
 }
 
+.primary_header.on-login {
+  font-size: 1.75em;
+}
+
 .sub_header {
   font-family: "PT Sans Narrow", Impact, fantasy;
   font-size: 1.5em;
@@ -82,6 +84,25 @@
   padding-top: .2em;
   text-align: center;
   transition: .25s;
+}
+
+.sub_header.on-login {
+  font-size: .75em;
+}
+
+.logo {
+  position: absolute;
+  height: 15em;
+  width: 15em;
+  opacity: .2;
+  background: url("../../../assets/logo.png") no-repeat center center;
+  background-size: cover;
+  transition: .25s;
+}
+
+.logo.on-login {
+  width: 7.5em;
+  height: 7.5em;
 }
 
 .button_text {

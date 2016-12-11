@@ -1,11 +1,18 @@
-  <div class="header">
-    <div class="header_text">
-      <div class="primary_header">I CAN HELP YOU WITH THAT</div>
-      <div class="sub_header">GETTING STUFF DONE FOR THE MOVEMENT</div>
-    </div>
-    <div class="logo"></div>
+<div class="header" [ngClass]="{'on-login': loginSuccesss}">
+  <div class="header_text" [ngClass]="{'on-login': loginSuccesss}">
+    <div class="primary_header" [ngClass]="{'on-login': loginSuccesss}">I CAN HELP YOU WITH THAT</div>
+    <div class="sub_header" [ngClass]="{'on-login': loginSuccesss}">GETTING STUFF DONE FOR THE MOVEMENT</div>
   </div>
-  <form #loginForm="ngForm" (ngSubmit)="login()" class="login_form">
-    <input placeholder="E-Mail" align="start" id="email_input" name="username" class="login_input" #username="ngModel" [(ngModel)]="credentials.userid" />
-    <input placeholder="Password" align="start" id="password_input" name="password" type="password" class="login_input" #password="ngModel" [(ngModel)]="credentials.password" />
-  </form>
+  <div class="logo" [ngClass]="{'on-login': loginSuccesss}"></div>
+</div>
+<form #loginForm="ngForm" (ngSubmit)="login()" class="login_form">
+  <input placeholder="E-Mail" [ngClass]="{'on-login': loginSuccesss}" align="start" id="email_input" name="username" class="login_input" (keypress)="login($event)" #username="ngModel" [(ngModel)]="credentials.userid" />
+  <input placeholder="Password" [ngClass]="{'on-login': loginSuccesss}" align="start" id="password_input" name="password" type="password" class="login_input" (keypress)="login($event)" #password="ngModel" [(ngModel)]="credentials.password" />
+  <!--<button *ngIf="isSubmitVisible" type="submit" class="login_button" (click)="login()">-->
+  <!--<div class="button_text">-->
+  <!--...logging in...-->
+  <!--<br />-->
+  <!--click to login-->
+  <!--</div>-->
+  <!--</button>-->
+</form>
