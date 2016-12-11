@@ -120,6 +120,10 @@ export class ProfileService {
       );
   };
 
+  public logout = () => {
+    localStorage.clear();
+  };
+
   public isLoggedIn = () => localStorage.getItem('jwt');
 
   public confirmInvite = (credentials: ProfileCredentials) => {

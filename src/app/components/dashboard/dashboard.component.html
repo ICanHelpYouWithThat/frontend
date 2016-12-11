@@ -22,7 +22,7 @@
     <button md-menu-item routerLink="/invite" routerLinkActive="active"> Invite </button>
     <button md-menu-item routerLink="/login" routerLinkActive="active"> Login </button>
     <button md-menu-item routerLink="/admin" routerLinkActive="active"> Admin </button>
-    <button md-menu-item disabled> Sign Out </button>
+    <button md-menu-item (click)="logout()"> Sign Out </button>
   </md-menu>
 
   <md-card-content>
