@@ -48,9 +48,151 @@ select:-webkit-autofill:focus {
   border-bottom: .1em solid gold;
 }
 
-
-
 .login_footer {
   margin-top: 1.5em!important;
 }
 
+.header {
+  display: flex;
+  padding-top: 7em;
+  width: 100%;
+  min-width: 16em;
+  margin: auto;
+  justify-content: center;
+  transition: 1s;
+}
+
+.header_text {
+  width: auto;
+  margin-top: 1em;
+  transition: .25s;
+}
+
+.primary_header {
+  font-family: "PT Sans Narrow", Impact, fantasy;
+  font-size: 4.125em;
+  opacity: .8;
+  /*padding-right: 1em;*/
+  padding-top: .75em;
+  text-align: center;
+  transition: .25s;
+}
+
+.sub_header {
+  font-family: "PT Sans Narrow", Impact, fantasy;
+  font-size: 1.5em;
+  opacity: .4;
+  padding-top: .2em;
+  text-align: center;
+  transition: .25s;
+}
+
+.logo {
+  position: absolute;
+  height: 15em;
+  width: 15em;
+  opacity: .2;
+  background: url("./assets/logo.png") no-repeat center center;
+  background-size: cover;
+  transition: .25s;
+}
+
+.logo.on-login {
+  width: 7.5em;
+  height: 7.5em;
+}
+
+.button_text {
+  width: 100%;
+  text-align: center;
+}
+
+@media screen and (min-width: 1500px) {
+  .login_input {
+    height: 3.75em;
+    font-size: 1.25em;
+  }
+  .header.on-login {
+    padding-top: 1em;
+  }
+
+  .primary_header.on-login {
+    font-size: 1.75em;
+  }
+
+  .sub_header.on-login {
+    font-size: .75em;
+  }
+
+  .logo.on-login {
+    width: 7.5em;
+    height: 7.5em;
+  }
+}
+
+@media screen and (max-width: 1500px) and ( min-width: 768px ) {
+  .login_input {
+    height: 3.75em;
+    font-size: 1.5em;
+  }
+  .header {
+    width: 50%;
+  }
+  .primary_header {
+    font-size: 4.125em;
+    padding-top: .75em;
+  }
+
+  .header.on-login {
+    padding-top: 1em;
+  }
+
+  .primary_header.on-login {
+    font-size: 1.75em;
+  }
+
+  .sub_header.on-login {
+    font-size: .75em;
+  }
+
+  .logo.on-login {
+    width: 7.5em;
+    height: 7.5em;
+  }
+}
+
+@media screen and (max-width: 768px) and (min-width: 320px) {
+  .logo {
+    height: 15em;
+    width: 15em;
+  }
+
+  .primary_header {
+    font-size: 2em;
+    padding-top: 2.25em;
+  }
+
+  .sub_header {
+    font-size: 1em;
+    padding-top: 1em;
+  }
+
+  .header.on-login {
+    padding-top: .75em;
+  }
+
+  .primary_header.on-login {
+    font-size: 1.75em;
+    padding-top: .7em;
+  }
+
+  .sub_header.on-login {
+    font-size: .75em;
+    padding-top: .25em;
+  }
+
+  .logo.on-login {
+    width: 7.5em;
+    height: 7.5em;
+  }
+}

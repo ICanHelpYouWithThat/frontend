@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import { ProfileService, Profile } from '../../services/profile/profile.service';
 
 @Component({
@@ -6,10 +6,15 @@ import { ProfileService, Profile } from '../../services/profile/profile.service'
   templateUrl: 'dashboard.component.html',
   styleUrls: ['dashboard.component.css']
 })
-export class DashboardComponent {
+export class DashboardComponent implements OnInit {
   private profile: Profile;
+  public loginSuccess: boolean;
 
   constructor (private _profileService: ProfileService) {
     this.profile = this._profileService.profile;
+  }
+
+  ngOnInit(): void {
+    this.loginSuccess = true;
   }
 }

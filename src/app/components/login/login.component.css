@@ -26,6 +26,8 @@
   padding-bottom: 0;
   box-sizing: border-box;
   width: 50%;
+  min-width: 16em;
+  max-width: 32em;
   margin-right: auto;
   margin-left: auto;
   font-size: 1.5em;
@@ -47,71 +49,7 @@
   to   { opacity: 0; }
 }
 
-.header {
-  display: flex;
-  padding-top: 7em;
-  width: 50%;
-  margin: auto;
-  justify-content: center;
-  transition: 1s;
-}
 
-.header.on-login {
-  padding-top: 1em;
-}
-
-.header_text {
-  width: auto;
-  margin-top: 1em;
-  transition: .25s;
-}
-
-.primary_header {
-  font-family: "PT Sans Narrow", Impact, fantasy;
-  font-size: 4.125em;
-  opacity: .8;
-  /*padding-right: 1em;*/
-  padding-top: .75em;
-  text-align: center;
-  transition: .25s;
-}
-
-.primary_header.on-login {
-  font-size: 1.75em;
-}
-
-.sub_header {
-  font-family: "PT Sans Narrow", Impact, fantasy;
-  font-size: 1.5em;
-  opacity: .4;
-  padding-top: .2em;
-  text-align: center;
-  transition: .25s;
-}
-
-.sub_header.on-login {
-  font-size: .75em;
-}
-
-.logo {
-  position: absolute;
-  height: 15em;
-  width: 15em;
-  opacity: .2;
-  background: url("../../../assets/logo.png") no-repeat center center;
-  background-size: cover;
-  transition: .25s;
-}
-
-.logo.on-login {
-  width: 7.5em;
-  height: 7.5em;
-}
-
-.button_text {
-  width: 100%;
-  text-align: center;
-}
 
 .login_footer {
   margin-top: 1.5em!important;
@@ -147,27 +85,14 @@
 
 @media screen and (max-width: 1500px) and ( min-width: 768px ) {
   .login_input {
-    height: 3.75em;
     font-size: 1.5em;
-    width: 50%;
-  }
-  .header {
-    width: 50%;
-  }
-  .primary_header {
-    font-size: 4.125em;
-    padding-top: .75em;
   }
 }
 
 @media screen and (min-width: 1500px) {
   .login_input {
-    height: 4em;
+    height: 3.75em;
     font-size: 1.25em;
-    width: 30%;
-  }
-  .header {
-    width: 45%;
   }
 }
 @media screen and (max-width: 768px) {
@@ -178,23 +103,5 @@
   .login_input {
     height: 3em;
     font-size: 1.25em;
-    width: 70%;
-  }
-  .header {
-    width: 85%;
-  }
-  .logo {
-    height: 10em;
-    width: 10em;
-  }
-
-  .primary_header {
-    font-size: 1.75em;
-    padding-top: 1.25em;
-  }
-
-  .sub_header {
-    font-size: .75em;
-    padding-top: .5em;
   }
 }
