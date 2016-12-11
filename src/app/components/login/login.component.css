@@ -1,0 +1,145 @@
+.login_form {
+  position: relative;
+  margin-top: 12.5em;
+  margin-right: auto;
+  margin-left: auto;
+  width: 100%;
+  transition: .25s;
+}
+
+.login_fields {
+  display: block;
+  padding-right: 8em;
+  padding-left: 8em;
+  margin: 0;
+  justify-content: center;
+  transition: .25s;
+}
+
+.login_input {
+  display: flex;
+  position: relative;
+  height: 3.75em;
+  padding-top: 0;
+  padding-right: 10px;
+  padding-left: 10px;
+  padding-bottom: 0;
+  box-sizing: border-box;
+  width: 90%;
+  margin-right: auto;
+  margin-left: auto;
+  font-size: 1.5em;
+  outline: 0;
+  border: none;
+  text-align: center;
+  transition: .25s;
+}
+.header {
+  display: flex;
+  padding: 0;
+  padding-top: 7em;
+  margin: 0;
+  justify-content: center;
+  transition: .25s;
+}
+
+.logo {
+  position: absolute;
+  height: 15em;
+  width: 15em;
+  opacity: .2;
+  background: url("../../../assets/logo.png") no-repeat center center;
+  background-size: cover;
+  transition: .25s;
+}
+
+.header_text {
+  width: auto;
+  margin-top: 1em;
+  transition: .25s;
+}
+
+.header_content {
+  display: inline-block;
+  transition: .25s;
+}
+
+.primary_header {
+  font-family: "PT Sans Narrow", Impact, fantasy;
+  font-size: 4.125em;
+  opacity: .8;
+  /*padding-right: 1em;*/
+  padding-top: .75em;
+  text-align: center;
+  transition: .25s;
+}
+
+.sub_header {
+  font-family: "PT Sans Narrow", Impact, fantasy;
+  font-size: 1.5em;
+  opacity: .4;
+  padding-top: .2em;
+  text-align: center;
+  transition: .25s;
+}
+
+.button_text {
+  width: 100%;
+  text-align: center;
+}
+
+.login_button {
+  display: flex;
+  color: rgba(0, 128, 128, 0.5);
+  font-family: "PT Sans Narrow", Impact, fantasy;
+  margin: auto;
+  height: 50px;
+  width: 50%;
+  letter-spacing: .2em;
+  background: none;
+  padding: 0 40px;
+  border: none;
+  font-size: 2em;
+  cursor: pointer;
+  transition: .2s;
+}
+
+.login_button:active {
+  outline: none;
+}
+
+.login_button:focus {
+  outline: none;
+}
+
+.login_button:hover {
+  color: #00dddd;
+}
+
+
+
+@media screen and (max-width: 768px) {
+  .login_form {
+    margin-top: 7.5em;
+  }
+
+  .login_input {
+    height: 3em;
+    font-size: 1.25em;
+  }
+
+  .logo {
+    height: 10em;
+    width: 10em;
+  }
+
+  .primary_header {
+    font-size: 1.75em;
+    padding-top: 1.25em;
+  }
+
+  .sub_header {
+    font-size: .75em;
+    padding-top: .5em;
+  }
+}

@@ -9,6 +9,8 @@ import { ProfileService, ProfileCredentials } from '../../services/profile/profi
 
 export class LoginComponent implements OnInit {
   private credentials: ProfileCredentials;
+  public isSubmitVisible: boolean = false;
+  public loginText: string = '';
 
   constructor(
     private _profileService: ProfileService
@@ -17,6 +19,14 @@ export class LoginComponent implements OnInit {
       userid: '',
       password: ''
     };
+  }
+
+  emailListener (event: any) {
+
+      this.loginText = 'Welcome ' + event.target.value;
+
+      event.preventDefault();
+      this.isSubmitVisible = true;
   }
 
   login () {

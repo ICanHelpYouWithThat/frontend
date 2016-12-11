@@ -18,7 +18,6 @@
       "prefix": "app",
       "mobile": false,
       "styles": [
-        "app/themes/ichuwt.theme.scss",
         "styles.css"
       ],
       "scripts": [],

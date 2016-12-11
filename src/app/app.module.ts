@@ -9,14 +9,17 @@ import { NgModule } from '@angular/core';
 import { ProfileService } from './services/profile/profile.service';
 import { ProfilesService } from './services/profiles/profiles.service';
 import { InviteService } from './services/invite/invite.service';
-import { PropertyPipe } from './pipes/property.pipe';
+
+import { PropertyPipe } from './pipes/property/property.pipe';
+import { KeyFilterPipe } from './pipes/key-filter/key-filter.pipe';
 
 import { AppRoutingModule, routableComponents } from './routing/routing.module';
 
 @NgModule({
   declarations: [
     PropertyPipe,
-    routableComponents
+    routableComponents,
+    KeyFilterPipe
   ],
   imports: [
     BrowserModule,

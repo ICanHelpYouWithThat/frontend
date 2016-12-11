@@ -1,6 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
 
-@import '~@angular/material/core/theming/prebuilt/deeppurple-amber.css';
+/*@import '~@angular/material/core/theming/prebuilt/deeppurple-amber.css';*/
+
+
+app-root {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.card {
+  position: relative;
+  min-width: 100px;
+  width: 30vw;
+  left: calc((100vw - 30vw)/2);
+  top: calc((100vh - 20vh)/8);
+}
+
 
 .text {
   color: black;
@@ -14,30 +32,13 @@
 }
 
 
-.help_you {
-  position: relative;
-  min-width: 100px;
-  width: 30vw;
-  left: calc((100vw - 30vw)/2);
-  top: calc((100vh - 20vh)/8);
-}
-
-.login_input {
-  width: 100%;
-}
-
-.login_button {
-  position: relative;
-  width: 100%;
-  background-color: darkcyan;
-  color: white;
-  margin-top: 2em!important;
-}
 
 .login_footer {
   margin-top: 1.5em!important;
 }
 
-.content {
-  padding: 0;
+.help_you {
+  position: relative;
+  min-width: 100px;
+  width: 100%;
 }

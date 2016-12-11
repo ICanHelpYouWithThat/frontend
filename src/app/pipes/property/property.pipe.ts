@@ -4,9 +4,7 @@ import { Pipe, PipeTransform } from '@angular/core';
   name: 'property'
 })
 export class PropertyPipe implements PipeTransform {
-
-  transform(value: any, args?: any): any {
-    return null;
+  transform(value: any) {
+    return value.filter((profile: any) => profile.status === 'Invited');
   }
-
 }
