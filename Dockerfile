@@ -17,7 +17,7 @@ WORKDIR ./dist
 COPY . /var/www
 WORKDIR /var/www
 
-
+RUN ["/bin/bash", "-c", "cp /frontend/dist/assets /var/www/assets"]
 RUN ["/bin/bash", "-c", "cp /frontend/dist/* /var/www"]
 RUN ["/bin/bash", "-c", "cd /var/www && ls"]
 RUN ["/bin/bash", "-c", "cd /var/www && rm -rf /var/frontend"]
