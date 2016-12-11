@@ -57,49 +57,25 @@ import { ProfileService, ProfileCredentials } from '../../services/profile/profi
       transition('* => void', animate('1s')),
       transition('void => *', animate('1s'))
     ]),
-    trigger('emailState', [
-      state('0', style({
-        'opacity': '1'
+    trigger('fieldState', [
+      state('hidden', style({
+        'opacity': '0'
       })),
-      state('1', style({
-        'opacity': '1'
-      })),
-      state('2', style({
-        'opacity': '1'
-      })),
-      state('3', style({
+      state('visible', style({
         'opacity': '1'
       })),
       transition('* => void', [
-        animate('1s 10 ease-in', style({
-          opacity: 0,
-        }))
-      ]),
-      transition('void => *', [
-        animate('1s 10 ease-in', style({
+        style({
           opacity: 1,
-        }))
-      ])
-    ]),
-    trigger('passwordState', [
-      state('0', style({
-        'opacity': '1'
-      })),
-      state('1', style({
-        'opacity': '1'
-      })),
-      state('2', style({
-        'opacity': '1'
-      })),
-      state('3', style({
-        'opacity': '1'
-      })),
-      transition('* => void', [
-        animate('1s 10 ease-out', style({
+        }),
+        animate('1s 10 ease-in', style({
           opacity: 0,
         }))
       ]),
       transition('void => *', [
+        style({
+          opacity: 0,
+        }),
         animate('1s 10 ease-out', style({
           opacity: 1,
         }))
@@ -113,12 +89,14 @@ export class LoginComponent implements OnInit {
   public isSubmitVisible: boolean = false;
   public loginText: string = '';
   public onLoginHeader: number = 0;
+  public fieldVisibility: string = 'visible';
   public loginSuccess: boolean = false;
   public screenSize: number = window.innerWidth;
 
   constructor(
     private _profileService: ProfileService
   ) {
+    this.fieldVisibility = 'visible';
     this.credentials = {
       userid: '',
       password: ''
@@ -128,6 +106,7 @@ export class LoginComponent implements OnInit {
   login (event: any): void {
     if (event.key === 'Enter') {
       this.loginSuccess = true;
+      this.fieldVisibility = 'hidden';
       this.sizeHeader();
       setTimeout(() => {
         this._profileService

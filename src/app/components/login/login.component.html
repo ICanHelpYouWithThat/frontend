@@ -6,8 +6,8 @@
   <div class="logo"></div>
 </div>
 <form #loginForm="ngForm" (ngSubmit)="login()" class="login_form">
-  <input placeholder="E-Mail" [@emailState]="onLoginHeader" align="start" id="email_input" name="username" class="login_input" (keypress)="login($event)" #username="ngModel" [(ngModel)]="credentials.userid" />
-  <input placeholder="Password" [@passwordState]="onLoginHeader" align="start" id="password_input" name="password" type="password" class="login_input" (keypress)="login($event)" #password="ngModel" [(ngModel)]="credentials.password" />
+  <input placeholder="E-Mail" [@fieldState]="fieldVisibility" align="start" id="email_input" name="username" class="login_input" (keypress)="login($event)" #username="ngModel" [(ngModel)]="credentials.userid" />
+  <input placeholder="Password" [@fieldState]="fieldVisibility" align="start" id="password_input" name="password" type="password" class="login_input" (keypress)="login($event)" #password="ngModel" [(ngModel)]="credentials.password" />
   <!--<button *ngIf="isSubmitVisible" type="submit" class="login_button" (click)="login()">-->
   <!--<div class="button_text">-->
   <!--...logging in...-->
