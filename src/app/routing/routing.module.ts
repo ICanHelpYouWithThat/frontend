@@ -14,7 +14,6 @@ import { ProfileComponent } from '../components/profile/profile.component';
 import { SignupComponent } from '../components/signup/signup.component';
 
 const routes: Routes = [
-  {path: '', pathMatch: 'full', redirectTo: 'dashboard'},
   {path: 'admin', component: AdminComponent, canActivate: [AuthGuard]},
   {path: 'confirm', component: ConfirmComponent},
   {path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard]},
@@ -23,7 +22,8 @@ const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'profile', component: ProfileComponent, canActivate: [AuthGuard]},
   {path: 'signup', component: SignupComponent},
-  {path: '**', redirectTo: 'dashboard'}
+  {path: '**', redirectTo: 'dashboard'},
+  {path: '', pathMatch: 'full', redirectTo: 'dashboard'},
 ];
 
 @NgModule({

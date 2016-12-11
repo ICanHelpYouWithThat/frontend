@@ -20,13 +20,12 @@
   display: flex;
   position: relative;
   height: 3.75em;
-  background-color: white!important;
   padding-top: 0;
   padding-right: 10px;
   padding-left: 10px;
   padding-bottom: 0;
   box-sizing: border-box;
-  width: 90%;
+  width: 50%;
   margin-right: auto;
   margin-left: auto;
   font-size: 1.5em;
@@ -34,6 +33,9 @@
   border: none;
   text-align: center;
   transition: 1s;
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgba(150, 150, 150, 0.3);
 }
 
 .login_input.on-login {
@@ -48,7 +50,8 @@
 .header {
   display: flex;
   padding-top: 7em;
-  margin: 0;
+  width: 50%;
+  margin: auto;
   justify-content: center;
   transition: 1s;
 }
@@ -142,8 +145,31 @@
   color: #00dddd;
 }
 
+@media screen and (max-width: 1500px) and ( min-width: 768px ) {
+  .login_input {
+    height: 3.75em;
+    font-size: 1.5em;
+    width: 50%;
+  }
+  .header {
+    width: 50%;
+  }
+  .primary_header {
+    font-size: 4.125em;
+    padding-top: .75em;
+  }
+}
 
-
+@media screen and (min-width: 1500px) {
+  .login_input {
+    height: 4em;
+    font-size: 1.25em;
+    width: 30%;
+  }
+  .header {
+    width: 45%;
+  }
+}
 @media screen and (max-width: 768px) {
   .login_form {
     margin-top: 7.5em;
@@ -152,8 +178,11 @@
   .login_input {
     height: 3em;
     font-size: 1.25em;
+    width: 70%;
   }
-
+  .header {
+    width: 85%;
+  }
   .logo {
     height: 10em;
     width: 10em;
