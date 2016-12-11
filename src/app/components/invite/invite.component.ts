@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { InviteService } from '../../services/invite/invite.service';
 import { ProfileService, Profile } from '../../services/profile/profile.service';
@@ -49,7 +49,7 @@ export class InviteComponent {
       const emails = this.email.split(',');
 
       // Check the number of invites this user has to ensure they have invites left.
-      if(emails.length <= this.profile.invites) {
+      if (emails.length <= this.profile.invites) {
         for (let i = 0; i < emails.length; i++) {
           if (this.re.test(emails[i])) {
             this.profile.invites--;

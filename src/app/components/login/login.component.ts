@@ -22,14 +22,6 @@ export class LoginComponent implements OnInit {
     };
   }
 
-  emailListener (event: any) {
-
-    this.loginText = 'Welcome ' + event.target.value;
-
-    event.preventDefault();
-    this.isSubmitVisible = true;
-  }
-
   login (event: any) {
     if (event.key === 'Enter') {
       this.loginSuccesss = true;

@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {Http, Response, RequestOptions, Headers} from '@angular/http';
 import {Observable} from 'rxjs';
-import { environment } from '../../../environments/environment'
+import { environment } from '../../../environments/environment';
 
 @Injectable()
 export class InviteService {
@@ -29,10 +29,10 @@ export class InviteService {
 
       return this._http.post(this.url, JSON.stringify(invitation), this.options)
         .map((response: Response) => response.json())
-        .catch((error) => Observable.throw(error.json() || 'Server error'))
+        .catch((error) => Observable.throw(error.json() || 'Server error'));
     }
 
-    return Observable.throw('Unauthorized, please login')
+    return Observable.throw('Unauthorized, please login');
   };
 
 }

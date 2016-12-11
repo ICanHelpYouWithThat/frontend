@@ -5,7 +5,7 @@ import { ProfileService } from '../../services/profile/profile.service';
 @Injectable()
 export class AuthGuard implements CanActivate {
 
-  constructor(private _profileService: ProfileService, private _router: Router){}
+  constructor(private _profileService: ProfileService, private _router: Router) {}
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
     if (this._profileService.isLoggedIn()) {

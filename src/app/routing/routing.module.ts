@@ -15,13 +15,13 @@ import { SignupComponent } from '../components/signup/signup.component';
 
 const routes: Routes = [
   {path: '', pathMatch: 'full', redirectTo: 'dashboard'},
-  {path: 'admin', component: AdminComponent},
+  {path: 'admin', component: AdminComponent, canActivate: [AuthGuard]},
   {path: 'confirm', component: ConfirmComponent},
-  {path: 'dashboard', component: DashboardComponent },
+  {path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard]},
   {path: 'event', component: EventComponent},
-  {path: 'invite', component: InviteComponent},
+  {path: 'invite', component: InviteComponent, canActivate: [AuthGuard]},
   {path: 'login', component: LoginComponent},
-  {path: 'profile', component: ProfileComponent },
+  {path: 'profile', component: ProfileComponent, canActivate: [AuthGuard]},
   {path: 'signup', component: SignupComponent},
   {path: '**', redirectTo: 'dashboard'}
 ];

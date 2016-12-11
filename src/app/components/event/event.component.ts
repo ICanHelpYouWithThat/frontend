@@ -36,7 +36,7 @@ export class EventComponent implements OnInit {
       'status' : 'New',
       'password' : 'thisismypassword',
       'linked_acct' : 'test'
-    }
+    };
   }
 
 }
