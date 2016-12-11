@@ -24,6 +24,7 @@ branches:
   only:
   - master
   - stage
+  - newlook
   - $CLUSTER_ID
 before_install:
   - export CHROME_BIN=chromium-browser
