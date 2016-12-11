@@ -1,4 +1,3 @@
-<div class="card">
   <div class="header">
     <div class="header_text">
       <div class="primary_header">I CAN HELP YOU WITH THAT</div>
@@ -7,21 +6,6 @@
     <div class="logo"></div>
   </div>
   <form #loginForm="ngForm" (ngSubmit)="login()" class="login_form">
-    <div class="login_fields">
-      <input placeholder="E-Mail" align="start" id="email_input" name="username" class="login_input" #username="ngModel" (blur)="emailListener($event)" [(ngModel)]="credentials.userid" />
-      <input placeholder="Password" align="start" id="password_input" name="password" type="password" class="login_input" #password="ngModel" [(ngModel)]="credentials.password" />
-    </div>
-
-    <button *ngIf="isSubmitVisible" type="submit" class="login_button" (click)="login()">
-      <div class="button_text">
-        {{loginText}}
-        <br />
-        click to login
-      </div>
-    </button>
+    <input placeholder="E-Mail" align="start" id="email_input" name="username" class="login_input" #username="ngModel" [(ngModel)]="credentials.userid" />
+    <input placeholder="Password" align="start" id="password_input" name="password" type="password" class="login_input" #password="ngModel" [(ngModel)]="credentials.password" />
   </form>
-  <!--<p class="text login_footer">-->
-    <!--Want to help out? Get an invite from a friend or email us.<br />-->
-    <!--Organization in need of help? <a routerLink="/signup" routerLinkActive="active">Sign up here</a>-->
-  <!--</p>-->
-</div>

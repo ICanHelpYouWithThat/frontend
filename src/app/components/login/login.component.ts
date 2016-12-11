@@ -21,13 +21,13 @@ export class LoginComponent implements OnInit {
     };
   }
 
-  emailListener (event: any) {
-
-      this.loginText = 'Welcome ' + event.target.value;
-
-      event.preventDefault();
-      this.isSubmitVisible = true;
-  }
+  // emailListener (event: any) {
+  //
+  //     this.loginText = 'Welcome ' + event.target.value;
+  //
+  //     event.preventDefault();
+  //     this.isSubmitVisible = true;
+  // }
 
   login () {
     this._profileService

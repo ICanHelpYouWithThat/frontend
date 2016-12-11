@@ -9,10 +9,10 @@
 
 .login_fields {
   display: block;
+  width: 60%;
   padding-right: 8em;
   padding-left: 8em;
-  margin: 0;
-  justify-content: center;
+  margin: auto;
   transition: .25s;
 }
 
@@ -20,6 +20,7 @@
   display: flex;
   position: relative;
   height: 3.75em;
+  background-color: white!important;
   padding-top: 0;
   padding-right: 10px;
   padding-left: 10px;
@@ -86,6 +87,10 @@
 .button_text {
   width: 100%;
   text-align: center;
+}
+
+.login_footer {
+  margin-top: 1.5em!important;
 }
 
 .login_button {
