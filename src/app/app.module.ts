@@ -1,34 +1,31 @@
 import { AppComponent } from './app.component';
-import { AuthGuard } from './routing/auth-guard/auth-guard.service';
+import { AuthGuard } from './core/services/auth-guard.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
-import { MaterialModule } from '@angular/material';
 import { NgModule } from '@angular/core';
-import { ProfileService } from './services/profile/profile.service';
-import { ProfilesService } from './services/profiles/profiles.service';
-import { InviteService } from './services/invite/invite.service';
-import { PropertyPipe } from './pipes/property.pipe';
 
-import { AppRoutingModule, routableComponents } from './routing/routing.module';
+import { AuthModule } from './auth/auth.module';
+import { DashboardModule } from './dashboard/dashboard.module';
+import { CoreModule } from './core/core.module';
+
+import { AppRoutingModule } from './app.router';
 
 @NgModule({
   declarations: [
-    PropertyPipe,
-    routableComponents
+    AppComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    MaterialModule.forRoot(),
-    AppRoutingModule
+    AuthModule,
+    DashboardModule,
+    AppRoutingModule,
+    CoreModule
   ],
   providers: [
-    ProfileService,
-    ProfilesService,
-    InviteService,
     AuthGuard
   ],
   bootstrap: [AppComponent]
