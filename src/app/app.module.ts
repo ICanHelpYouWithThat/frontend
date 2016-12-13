@@ -18,6 +18,7 @@ import { KeyFilterPipe } from './pipes/key-filter/key-filter.pipe';
 import { AppRoutingModule, routableComponents } from './routing/routing.module';
 import {MainStore} from './states/main';
 import {RouterStoreModule} from "@ngrx/router-store";
+import { NavigationComponent } from './components/navigation/navigation.component';
 
 console.log(MainStore);
 @NgModule({
@@ -26,6 +27,7 @@ console.log(MainStore);
     routableComponents,
     KeyFilterPipe,
     AppComponent,
+    NavigationComponent,
   ],
   imports: [
     BrowserModule,

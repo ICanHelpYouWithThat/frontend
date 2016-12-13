@@ -136,7 +136,7 @@ import {AppState} from '../../states/main';
         style({
           opacity: 1,
         }),
-        animate('1s 10 ease-in', style({
+        animate('1s 10 ease-out', style({
           opacity: 0,
         }))
       ]),
@@ -144,7 +144,7 @@ import {AppState} from '../../states/main';
         style({
           opacity: 0,
         }),
-        animate('1s 10 ease-out', style({
+        animate('1s 10 ease-in', style({
           opacity: 1,
         }))
       ])

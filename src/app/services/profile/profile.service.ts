@@ -1,10 +1,11 @@
 import {Injectable} from '@angular/core';
 import {Http, Response, RequestOptions, Headers} from '@angular/http';
-import { Observable } from 'rxjs/Observable';
 import { Store } from '@ngrx/store';
 import { AppState } from '../../states/main';
 import { go } from '@ngrx/router-store';
 import { environment } from '../../../environments/environment';
+import { Observable } from 'rxjs';
+import { Subscription } from 'rxjs/Subscription';
 
 export interface Profile {
   _id?: string;
