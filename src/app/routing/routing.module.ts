@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import {Routes, RouterModule} from '@angular/router';
 
 import { AuthGuard } from './auth-guard/auth-guard.service';
 
@@ -12,6 +12,7 @@ import { InviteComponent } from '../components/invite/invite.component';
 import { LoginComponent } from '../components/login/login.component';
 import { ProfileComponent } from '../components/profile/profile.component';
 import { SignupComponent } from '../components/signup/signup.component';
+
 
 const routes: Routes = [
   {path: 'admin', component: AdminComponent, canActivate: [AuthGuard]},
@@ -31,7 +32,7 @@ const routes: Routes = [
     RouterModule
   ],
   imports: [
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
   ]
 })
 

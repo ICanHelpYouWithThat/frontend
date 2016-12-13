@@ -3,7 +3,7 @@
     <div class="primary_header" [@headerPrimaryState]="onLoginHeader">I CAN HELP YOU WITH THAT</div>
     <div class="sub_header" [@headerSubState]="onLoginHeader">GETTING STUFF DONE FOR THE MOVEMENT</div>
   </div>
-  <div class="logo"></div>
+  <div class="logo" [@logoState]="onLoginHeader"></div>
 </div>
 <form #loginForm="ngForm" (ngSubmit)="login()" class="login_form">
   <input placeholder="E-Mail" [@fieldState]="fieldVisibility" align="start" id="email_input" name="username" class="login_input" (keypress)="login($event)" #username="ngModel" [(ngModel)]="credentials.userid" />

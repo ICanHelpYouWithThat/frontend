@@ -1,6 +1,8 @@
 import { Component, OnInit} from '@angular/core';
 import { ProfileService, Profile } from '../../services/profile/profile.service';
-import { Router } from '@angular/router';
+import { Store } from '@ngrx/store';
+import { go } from '@ngrx/router-store';
+import {AppState} from '../../states/main';
 
 @Component({
   selector: 'app-dashboard',
@@ -9,21 +11,21 @@ import { Router } from '@angular/router';
 })
 export class DashboardComponent implements OnInit {
   private profile: Profile;
-  public loginSuccess: boolean;
+  public onLoginHeader: boolean;
 
   constructor (
     private _profileService: ProfileService,
-    private _router: Router
+    private _store: Store<AppState>
   ) {
     this.profile = this._profileService.profile;
   }
 
   logout(): void {
     this._profileService.logout();
-    this._router.navigate(['/login']);
+    this._store.dispatch(go(['/login', {onLoginHeader: 4}]));
   }
 
   ngOnInit(): void {
-    this.loginSuccess = true;
+    this.onLoginHeader = true;
   }
 }

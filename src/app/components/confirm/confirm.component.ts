@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ProfileService, ProfileCredentials } from '../../services/profile/profile.service';
+import { Store } from '@ngrx/store';
+import { go } from '@ngrx/router-store';
+import {AppState} from '../../states/main';
 
 @Component({
   selector: 'app-confirm',
@@ -11,7 +14,11 @@ export class ConfirmComponent implements OnInit {
 
   private profile: ProfileCredentials;
 
-  constructor(private _profileService: ProfileService, private _router: Router) {
+  constructor(
+    private _profileService: ProfileService,
+    private _router: Router,
+    private _store: Store<AppState>
+  ) {
     this.profile = {
       name: '',
       email: '',
@@ -24,7 +31,7 @@ export class ConfirmComponent implements OnInit {
       .confirmInvite(this.profile)
       .subscribe(
         (response) => {
-          this._router.navigate(['thankyou']);
+          this._store.dispatch(go('thankyou'));
         },
         (error) => {
           console.log(error.message);

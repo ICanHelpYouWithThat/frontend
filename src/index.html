@@ -7,8 +7,29 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <style>
+    .loading_logo {
+      position: relative;
+      height: 15em;
+      width: 15em;
+      margin-top: 7em;
+      margin-left: auto;
+      margin-right: auto;
+      opacity: .2;
+      background: url("./assets/logo.png") no-repeat center center;
+      background-size: cover;
+      transition: 5s;
+    }
+    /*.loading_logo:focus   {*/
+      /*opacity: .2;*/
+    /*}*/
+  </style>
 </head>
 <body>
-  <app-root>Loading...</app-root>
+  <app-root><div class="loading_logo"></div></app-root>
+
+<script>
+//  document.getElementById('loading_logo').focus();
+</script>
 </body>
 </html>

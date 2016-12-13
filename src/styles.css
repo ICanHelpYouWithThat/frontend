@@ -28,6 +28,8 @@ select:-webkit-autofill:focus {
   transition: background-color 5000s ease-in-out 0s!important;
 
 }
+
+
 .card {
   position: relative;
   min-width: 100px;
@@ -54,13 +56,14 @@ select:-webkit-autofill:focus {
 
 .header {
   display: flex;
-  padding-top: 7em;
+  padding-top: 1em;
   width: 100%;
   min-width: 16em;
   margin: auto;
   justify-content: center;
   transition: 1s;
 }
+
 
 .header_text {
   width: auto;
@@ -89,8 +92,8 @@ select:-webkit-autofill:focus {
 
 .logo {
   position: absolute;
-  height: 15em;
-  width: 15em;
+  height: 7.5em;
+  width: 7.5em;
   opacity: .2;
   background: url("./assets/logo.png") no-repeat center center;
   background-size: cover;
@@ -107,6 +110,16 @@ select:-webkit-autofill:focus {
     height: 3.75em;
     font-size: 1.25em;
   }
+  .header {
+    padding-top: 1em,
+  }
+  .primary_header {
+    font-size: 1.75em;
+  }
+  .sub_header {
+    font-size: .75em;
+    padding-top: .2em;
+  }
 }
 
 @media screen and (max-width: 1500px) and ( min-width: 768px ) {
@@ -115,27 +128,32 @@ select:-webkit-autofill:focus {
     font-size: 1.5em;
   }
   .header {
-    width: 50%;
+    padding-top: 1em;
   }
   .primary_header {
-    font-size: 4.125em;
-    padding-top: .75em;
+    font-size: 1.75em;
+  }
+  .sub_header {
+    font-size: .75em;
+    padding-top: .2em;
   }
 }
 
 @media screen and (max-width: 768px) {
-  .logo {
-    height: 15em;
-    width: 15em;
+  .header {
+    padding-top: .75em,
+  }
+  .primary_header {
+
   }
 
   .primary_header {
-    font-size: 2em;
-    padding-top: 2.25em;
+    width: 7.5em;
+    height: 7.5em;
   }
 
   .sub_header {
-    font-size: 1em;
-    padding-top: 1em;
+    font-size: .75em;
+    padding-top: .25em;
   }
 }

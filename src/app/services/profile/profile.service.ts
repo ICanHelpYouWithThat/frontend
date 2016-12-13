@@ -1,7 +1,9 @@
 import {Injectable} from '@angular/core';
 import {Http, Response, RequestOptions, Headers} from '@angular/http';
-import {Observable, Subscription} from 'rxjs';
-import { Router } from '@angular/router';
+import { Observable } from 'rxjs/Observable';
+import { Store } from '@ngrx/store';
+import { AppState } from '../../states/main';
+import { go } from '@ngrx/router-store';
 import { environment } from '../../../environments/environment';
 
 export interface Profile {
@@ -36,7 +38,10 @@ export class ProfileService {
   private options: RequestOptions;
   private url: string;
 
-  constructor (private _http: Http, private _router: Router) {
+  constructor (
+    private _http: Http,
+    private _store: Store<AppState>
+  ) {
     this.redirectUrl = '';
     this.url = environment.host + '/profile/';
     this.headers = new Headers({
@@ -111,7 +116,8 @@ export class ProfileService {
           localStorage.setItem('profile', JSON.stringify(response.profile));
           this.profile = response.profile;
           localStorage.setItem('jwt', response.token);
-          this._router.navigate(['dashboard']);
+          this._store.dispatch(go(['dashboard']));
+
           this.redirectUrl = '';
         },
         (error) => {

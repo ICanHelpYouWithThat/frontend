@@ -1,10 +1,9 @@
 .login_form {
   position: relative;
-  margin-top: 12.5em;
+  margin-top: 9.5em;
   margin-right: auto;
   margin-left: auto;
   width: 100%;
-  transition: .25s;
 }
 
 .login_fields {
@@ -13,7 +12,6 @@
   padding-right: 8em;
   padding-left: 8em;
   margin: auto;
-  transition: .25s;
 }
 
 .login_input {
@@ -65,7 +63,6 @@
   border: none;
   font-size: 2em;
   cursor: pointer;
-  transition: .2s;
 }
 
 .login_button:active {
@@ -80,9 +77,57 @@
   color: #00dddd;
 }
 
+.header {
+  display: flex;
+  padding-top: 7em;
+  width: 100%;
+  min-width: 16em;
+  margin: auto;
+  justify-content: center;
+}
+
+.header_text {
+  width: auto;
+  margin-top: 1em;
+}
+
+.primary_header {
+  font-family: "PT Sans Narrow", Impact, fantasy;
+  font-size: 4.125em;
+  opacity: 0;
+  width: 100%;
+  height: auto;
+  /*padding-right: 1em;*/
+  padding-top: .75em;
+  text-align: center;
+}
+
+.sub_header {
+  font-family: "PT Sans Narrow", Impact, fantasy;
+  font-size: 1.5em;
+  opacity: 0;
+  width: 100%;
+  padding-top: .2em;
+  text-align: center;
+}
+
+.logo {
+  position: absolute;
+  height: 15em;
+  width: 15em;
+  opacity: .2;
+  background: url("../../../assets/logo.png") no-repeat center center;
+  background-size: cover;
+}
+
 @media screen and (max-width: 1500px) and ( min-width: 768px ) {
   .login_input {
     font-size: 1.5em;
+  }
+
+  .primary_header {
+    font-size: 4.125em;
+    padding-top: .75em;
   }
 }
 
@@ -101,4 +146,27 @@
     height: 3em;
     font-size: 1.25em;
   }
+
+  .logo {
+    height: 15em;
+    width: 15em;
+  }
+
+  .primary_header {
+    font-size: 2em;
+    padding-top: 2.25em;
+  }
+
+  .sub_header {
+    font-size: 1em;
+    padding-top: 1em;
+  }
 }
+
+@media screen and (max-width: 1500px) and ( min-width: 768px ) {
+  .login_input {
+    height: 3.75em;
+    font-size: 1.5em;
+  }
+}
+
