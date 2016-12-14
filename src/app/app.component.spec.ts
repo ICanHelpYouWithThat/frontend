@@ -2,6 +2,12 @@
 
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import {RouterTestingModule } from '@angular/router/testing';
+import {AppModule} from "./app.module";
+import { Store } from '@ngrx/store';
+import {AppState} from "./states/main";
+import {Renderer} from "../../node_modules/@angular/core/src/render/api";
+import {StoreModule} from "../../node_modules/@ngrx/store/src/ng2";
 
 describe('AppComponent', () => {
   beforeEach(() => {
@@ -9,6 +15,16 @@ describe('AppComponent', () => {
       declarations: [
         AppComponent
       ],
+      providers: [
+        AppModule,
+        StoreModule.provideStore(MainSto),
+        Renderer,
+        {provide: Router,  useClass: MockRouter }
+      ],
+
+      imports: [
+        RouterTestingModule
+      ]
     });
     TestBed.compileComponents();
   });

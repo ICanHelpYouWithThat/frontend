@@ -1,5 +1,5 @@
 
-import {combineReducers, ActionReducer, Action} from '@ngrx/store';
+import { combineReducers, ActionReducer, Action } from '@ngrx/store';
 import { compose } from '@ngrx/core';
 
 export interface AppState {
@@ -25,8 +25,8 @@ export const stateReducer: ActionReducer<AppState> = (state: AppState = { router
   return state;
 };
 
-const MainStore = compose(combineReducers)({
+const AppState = compose(combineReducers)({
   router: stateReducer
 });
 
-export {MainStore as MainStore};
+export { AppState };

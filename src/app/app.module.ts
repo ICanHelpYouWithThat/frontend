@@ -8,15 +8,15 @@ import { NgModule } from '@angular/core';
 import { ProfileService } from './services/profile/profile.service';
 import { ProfilesService } from './services/profiles/profiles.service';
 import { InviteService } from './services/invite/invite.service';
-import {StoreModule} from '@ngrx/store';
+import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 import { PropertyPipe } from './pipes/property/property.pipe';
 import { KeyFilterPipe } from './pipes/key-filter/key-filter.pipe';
 
 import { AppRoutingModule, routableComponents } from './routing/routing.module';
-import {MainStore} from './states/main';
-import {RouterStoreModule} from '@ngrx/router-store';
+import { MainStore } from './states/main';
+import { RouterStoreModule } from '@ngrx/router-store';
 import { NavigationComponent } from './components/navigation/navigation.component';
 
 @NgModule({
