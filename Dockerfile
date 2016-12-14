@@ -12,7 +12,7 @@ WORKDIR /frontend
 
 RUN ["/bin/bash", "-c", "cd /frontend; source ~/.profile; npm run build:aot"]
 
-WORKDIR ./dist
+WORKDIR /frontend
 
 COPY . /var/www
 WORKDIR /var/www
