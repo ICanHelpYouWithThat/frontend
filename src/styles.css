@@ -21,7 +21,9 @@ textarea:-webkit-autofill:focus,
 select:-webkit-autofill,
 select:-webkit-autofill:hover,
 select:-webkit-autofill:focus {
-  all: initial!important;
+  border: 1px solid rgba(150, 150, 150, 0.3)!important;
+  -webkit-box-shadow: 0 0 0px 1000px white inset!important;
+  transition: background-color 5000s ease-in-out 0s!important;
 }
 
 
