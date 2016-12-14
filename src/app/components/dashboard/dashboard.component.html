@@ -8,24 +8,24 @@
 
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-<md-card id="help_you" class="card">
+<div id="help_you" class="card">
 
-  <img md-card-image class="content" src="https://scontent.fbed1-2.fna.fbcdn.net/v/t1.0-9/15027882_10101666597237585_7556774340470305079_n.jpg?oh=635948e21d52a9aacc0ab9cc53a4e1ad&oe=58D120BD"/>
+  <img  class="content" src="https://scontent.fbed1-2.fna.fbcdn.net/v/t1.0-9/15027882_10101666597237585_7556774340470305079_n.jpg?oh=635948e21d52a9aacc0ab9cc53a4e1ad&oe=58D120BD"/>
 
-  <button  [md-menu-trigger-for]="menu">
-    <md-icon>more_vert</md-icon>
+  <button>  <!--[md-menu-trigger-for]="menu"-->
+    <div>more_vert</div>
   </button>
 
-  <md-menu #menu="mdMenu">
-    <button md-menu-item routerLink="/dashboard" routerLinkActive="active"> Dashboard </button>
-    <button md-menu-item routerLink="/profile" routerLinkActive="active"> Profile </button>
-    <button md-menu-item routerLink="/invite" routerLinkActive="active"> Invite </button>
-    <button md-menu-item routerLink="/login" routerLinkActive="active"> Login </button>
-    <button md-menu-item routerLink="/admin" routerLinkActive="active"> Admin </button>
-    <button md-menu-item (click)="logout()"> Sign Out </button>
-  </md-menu>
+  <div>
+    <button  routerLink="/dashboard" routerLinkActive="active"> Dashboard </button>
+    <button  routerLink="/profile" routerLinkActive="active"> Profile </button>
+    <button  routerLink="/invite" routerLinkActive="active"> Invite </button>
+    <button  routerLink="/login" routerLinkActive="active"> Login </button>
+    <button  routerLink="/admin" routerLinkActive="active"> Admin </button>
+    <button  (click)="logout()"> Sign Out </button>
+  </div>
 
-  <md-card-content>
+  <div>
     <h2 *ngIf="profile">Welcome, {{ profile.name }}</h2>
 
     My Tasks
@@ -33,11 +33,11 @@
       Find your first task
       <a href="#">Search Tasks</a>
     </div>
-  </md-card-content>
-  <md-card-actions>
+  </div>
+  <div>
     <button routerLink="/invite" >Invite friends</button>
     <button routerLink="/invite" >Invite friends</button>
     <button routerLink="/invite" >Invite friends</button>
     <button >Search tasks</button>
-  </md-card-actions>
-</md-card>
+  </div>
+</div>

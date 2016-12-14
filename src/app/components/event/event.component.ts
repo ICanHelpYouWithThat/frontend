@@ -4,8 +4,8 @@ import { ProfileService } from '../../services/profile/profile.service';
 
 @Component({
   selector: 'app-event',
-  templateUrl: 'event.component.html',
-  styleUrls: ['event.component.css'],
+  templateUrl: './event.component.html',
+  styleUrls: ['./event.component.css'],
   providers: [ProfileService]
 })
 

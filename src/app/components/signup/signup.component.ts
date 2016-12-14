@@ -7,8 +7,8 @@ import {go} from '@ngrx/router-store';
 
 @Component({
   selector: 'app-signup',
-  templateUrl: 'signup.component.html',
-  styleUrls: ['signup.component.css'],
+  templateUrl: './signup.component.html',
+  styleUrls: ['./signup.component.css'],
   providers: [ProfileService]
 })
 

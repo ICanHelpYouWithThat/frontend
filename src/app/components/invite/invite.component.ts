@@ -8,8 +8,8 @@ import {go} from '@ngrx/router-store';
 
 @Component({
   selector: 'app-invite',
-  templateUrl: 'invite.component.html',
-  styleUrls: ['invite.component.css']
+  templateUrl: './invite.component.html',
+  styleUrls: ['./invite.component.css']
 })
 
 export class InviteComponent {

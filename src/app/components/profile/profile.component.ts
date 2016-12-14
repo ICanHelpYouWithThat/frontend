@@ -3,8 +3,8 @@ import { ProfileService, Profile } from '../../services/profile/profile.service'
 
 @Component({
   selector: 'app-profile',
-  templateUrl: 'profile.component.html',
-  styleUrls: ['profile.component.css'],
+  templateUrl: './profile.component.html',
+  styleUrls: ['./profile.component.css'],
   providers: []
 })
 export class ProfileComponent implements OnInit {

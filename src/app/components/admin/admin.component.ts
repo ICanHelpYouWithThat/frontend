@@ -5,8 +5,8 @@ import { ProfilesService } from '../../services/profiles/profiles.service';
 
 @Component({
   selector: 'app-admin',
-  templateUrl: 'admin.component.html',
-  styleUrls: ['admin.component.css'],
+  templateUrl: './admin.component.html',
+  styleUrls: ['./admin.component.css'],
   providers: [ProfileService, ProfilesService]
 })
 export class AdminComponent implements OnInit {

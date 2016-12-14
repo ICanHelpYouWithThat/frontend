@@ -6,8 +6,8 @@ import {Observable} from 'rxjs';
 import {AppState} from '../../states/main';
 @Component({
   selector: 'app-login',
-  templateUrl: 'login.component.html',
-  styleUrls: ['login.component.css'],
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.css'],
   providers: [],
   changeDetection: ChangeDetectionStrategy.OnPush,
   animations: [
