@@ -5,7 +5,7 @@ import { AppState } from '../../states/main';
 import { go } from '@ngrx/router-store';
 import { environment } from '../../../environments/environment';
 import { Observable } from 'rxjs';
-import 'rxjs/Subscription';
+import { Subscription } from 'rxjs/Subscription';
 
 export interface Profile {
   _id?: string;
