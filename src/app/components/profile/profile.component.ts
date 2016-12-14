@@ -5,7 +5,7 @@ import { ProfileService, Profile } from '../../services/profile/profile.service'
   selector: 'app-profile',
   templateUrl: 'profile.component.html',
   styleUrls: ['profile.component.css'],
-  providers: [ProfileService]
+  providers: []
 })
 export class ProfileComponent implements OnInit {
 

@@ -3,7 +3,7 @@ import { Store } from '@ngrx/store';
 import { AppState } from '../../states/main';
 import { Router } from '@angular/router';
 import { ProfileService, Profile} from '../../services/profile/profile.service';
-import {go} from "@ngrx/router-store";
+import {go} from '@ngrx/router-store';
 
 @Component({
   selector: 'app-signup',

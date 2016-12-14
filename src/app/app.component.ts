@@ -2,7 +2,6 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { replace } from '@ngrx/router-store';
 import { Store } from '@ngrx/store';
 import {AppState} from './states/main';
-import {Observable} from 'rxjs';
 
 @Component({
   selector: 'app-root',

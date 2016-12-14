@@ -1,31 +1,42 @@
-# Frontend
+[![Build Status](https://travis-ci.org/ICanHelpYouWithThat/frontend.svg?branch=master)](https://travis-ci.org/ICanHelpYouWithThat/frontend)
 
-This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.21.
+### What we are...
+A simple site which allows people who are logged in through Facebook to find tasks that help out an organization who needs a skill they can offer - location/time constraints are matching.
 
-## Development server
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+We will have a simple UI Allow users once logged in as either an individual or organization. Individual User Create their profile - skills, contact info, privacy settings, skills they can offer, location, find tasks that they can signup for
 
-## Code scaffolding
+Organization User Create events that require skills at a location for a certain timeframe, give Karma points to people who have completed tasks
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive/pipe/service/class`.
+Simple UI with a few screens that have simple forms to enter in data
 
-## Build
+###### *Node Backend Repo*
+https://github.com/ICanHelpYouWithThat/backend
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+###  Dev Setup
+1) Clone the repo
+        
+        git clone https://github.com/ICanHelpYouWithThat/frontend.git
+        cd ./frontend
 
-## Running unit tests
+2) install node modules
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+        npm install
 
-## Running end-to-end tests
+3) Start the app
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
+        npm start
 
-## Deploying to Github Pages
+App is now running on port 4200
 
-Run `ng github-pages:deploy` to deploy to Github Pages.
+#### Karma and protractor for testing.
 
-## Further help
+###### *Karma Docs*
+http://www.protractortest.org/#/
 
-To get more help on the `angular-cli` use `ng --help` or go check out the [Angular-CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+#### Angular 2 with TypeScript
+###### *Angular Docs*
+https://angular.io/docs/ts/latest/
+###### *TypeScript Docs*
+https://www.typescriptlang.org/docs/tutorial.html
+
+

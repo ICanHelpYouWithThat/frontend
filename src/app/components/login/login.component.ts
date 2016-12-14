@@ -58,7 +58,7 @@ import {AppState} from '../../states/main';
       state('1', style({
         'opacity': '.4',
         'font-size': '.75em',
-        'padding-top': '.2em'
+        'padding-top': '.2:209em'
       })),
       state('2', style({
         'opacity': '.4',
@@ -206,7 +206,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
 
-    console.log(this.store$)
+    console.log(this.store$);
     this.store$.select('router').subscribe(((val: AppState) => {
       console.log(val);
       console.log(val);

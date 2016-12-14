@@ -4,7 +4,7 @@
 <md-card id="help_you" class="card">
   <md-card-content>
     <img md-card-image class="content" src="https://scontent.fbed1-2.fna.fbcdn.net/v/t1.0-9/15027882_10101666597237585_7556774340470305079_n.jpg?oh=635948e21d52a9aacc0ab9cc53a4e1ad&oe=58D120BD"/>
-    <button md-icon-button [md-menu-trigger-for]="menu">
+    <button  [md-menu-trigger-for]="menu">
       <md-icon>more_vert</md-icon>
     </button>
 
@@ -23,7 +23,7 @@
     <form #signupForm="ngForm" (ngSubmit)="confirm()">
       <md-input placeholder="E-Mail" align="start" id="email_input" name="email" class="confirm_input" [(ngModel)]="profile.email"></md-input>
       <md-input placeholder="Passcode" align="start" id="passcode_input" name="passcode" class="confirm_input" [(ngModel)]="profile.mission"></md-input>
-      <button md-button type="submit" class="confirm_button" style="color: white;" (click)="confirm()">Confirm</button>
+      <button  type="submit" class="confirm_button" style="color: white;" (click)="confirm()">Confirm</button>
     </form>
 
   </md-card-content>

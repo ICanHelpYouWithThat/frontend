@@ -4,7 +4,7 @@ import { InviteService } from '../../services/invite/invite.service';
 import { Store } from '@ngrx/store';
 import { ProfileService, Profile } from '../../services/profile/profile.service';
 import {AppState} from '../../states/main';
-import {go} from "@ngrx/router-store";
+import {go} from '@ngrx/router-store';
 
 @Component({
   selector: 'app-invite',

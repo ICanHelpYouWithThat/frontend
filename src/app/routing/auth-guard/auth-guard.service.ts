@@ -1,6 +1,6 @@
 import { Store } from '@ngrx/store';
 import { AppState } from '../../states/main';
-import {ActivatedRouteSnapshot, CanActivate, RouterStateSnapshot, RouterModule} from '@angular/router';
+import {ActivatedRouteSnapshot, CanActivate, RouterStateSnapshot } from '@angular/router';
 import { Injectable } from '@angular/core';
 import { ProfileService } from '../../services/profile/profile.service';
 

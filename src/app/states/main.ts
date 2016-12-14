@@ -1,5 +1,4 @@
 
-import { routerReducer } from '@ngrx/router-store';
 import {combineReducers, ActionReducer, Action} from '@ngrx/store';
 import { compose } from '@ngrx/core';
 
