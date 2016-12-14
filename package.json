@@ -4,7 +4,7 @@
   "license": "MIT",
   "angular-cli": {},
   "scripts": {
-    "start": "./node_modules/.bin/ng serve",
+    "start": "npm install && npm prune &&./node_modules/.bin/ng serve",
     "build:aot": "./node_modules/.bin/ng build --prod --aot",
     "lint": "tslint \"src/**/*.ts\"",
     "test": "./node_modules/.bin/ng test",

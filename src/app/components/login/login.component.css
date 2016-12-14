@@ -18,10 +18,7 @@
   display: flex;
   position: relative;
   height: 3.75em;
-  padding-top: 0;
-  padding-right: 10px;
-  padding-left: 10px;
-  padding-bottom: 0;
+  padding: 0 10px;
   box-sizing: border-box;
   width: 50%;
   min-width: 16em;
@@ -31,7 +28,7 @@
   font-size: 1.5em;
   outline: 0;
   text-align: center;
-  border: 1px solid rgba(150, 150, 150, 0.3);
+  border: 1px solid rgba(150, 150, 150, 0.3)!important;
   opacity: 0;
 }
 
