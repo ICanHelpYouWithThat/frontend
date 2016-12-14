@@ -1,4 +1,4 @@
-FROM us.gcr.io/icanhelpyouwiththat-149304/nginx-npm:latest
+FROM us.gcr.io/icanhelpyouwiththat-149304/nginx-npm:http2
 MAINTAINER Jesse Bowden <jesse@gemr.com>
 
 COPY    ./ops/nginx.conf /etc/nginx/nginx.conf
