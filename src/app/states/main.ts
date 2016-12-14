@@ -1,15 +1,15 @@
 
-import { combineReducers, ActionReducer, Action } from '@ngrx/store';
+import {combineReducers, ActionReducer, Action} from '@ngrx/store';
 import { compose } from '@ngrx/core';
 
-export interface AppState {
+export interface AppStateInterface {
   router: {
     path: string;
     history: Array<any>;
   };
 }
 
-export const stateReducer: ActionReducer<AppState> = (state: AppState = { router: {path: '', history: []}}, action: Action) => {
+export const stateReducer: ActionReducer<AppStateInterface> = (state: AppStateInterface = { router: {path: '', history: []}}, action: Action) => {
 
   if (action.type === '@ngrx/store/init') {
     return {
@@ -25,8 +25,9 @@ export const stateReducer: ActionReducer<AppState> = (state: AppState = { router
   return state;
 };
 
+
 const AppState = compose(combineReducers)({
   router: stateReducer
 });
 
-export { AppState };
+export { AppState as AppState };

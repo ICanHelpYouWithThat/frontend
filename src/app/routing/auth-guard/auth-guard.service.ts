@@ -1,5 +1,5 @@
 import { Store } from '@ngrx/store';
-import { AppState } from '../../states/main';
+import { AppStateInterface } from '../../states/main';
 import {ActivatedRouteSnapshot, CanActivate, RouterStateSnapshot } from '@angular/router';
 import { Injectable } from '@angular/core';
 import { ProfileService } from '../../services/profile/profile.service';
@@ -9,7 +9,7 @@ export class AuthGuard implements CanActivate {
 
   constructor(
     private _profileService: ProfileService,
-    private _store: Store<AppState>,
+    private _store: Store<AppStateInterface>,
   ) {}
 
   canActivate(

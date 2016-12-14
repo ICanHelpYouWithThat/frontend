@@ -21,7 +21,7 @@ textarea:-webkit-autofill:focus,
 select:-webkit-autofill,
 select:-webkit-autofill:hover,
 select:-webkit-autofill:focus {
-  all: initial;
+  all: initial!important;
 }
 
 

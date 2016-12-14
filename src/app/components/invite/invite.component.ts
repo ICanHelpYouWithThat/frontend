@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { InviteService } from '../../services/invite/invite.service';
 import { Store } from '@ngrx/store';
 import { ProfileService, Profile } from '../../services/profile/profile.service';
-import {AppState} from '../../states/main';
+import {AppStateInterface} from '../../states/main';
 import {go} from '@ngrx/router-store';
 
 @Component({
@@ -24,7 +24,7 @@ export class InviteComponent {
   constructor (
     private _profileService: ProfileService,
     private _inviteService: InviteService,
-    private _store: Store<AppState>,
+    private _store: Store<AppStateInterface>,
     private _router: Router
   ) {
 

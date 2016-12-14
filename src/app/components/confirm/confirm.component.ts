@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { ProfileService, ProfileCredentials } from '../../services/profile/profile.service';
 import { Store } from '@ngrx/store';
 import { go } from '@ngrx/router-store';
-import {AppState} from '../../states/main';
+import {AppStateInterface} from '../../states/main';
 
 @Component({
   selector: 'app-confirm',
@@ -17,7 +17,7 @@ export class ConfirmComponent implements OnInit {
   constructor(
     private _profileService: ProfileService,
     private _router: Router,
-    private _store: Store<AppState>
+    private _store: Store<AppStateInterface>
   ) {
     this.profile = {
       name: '',

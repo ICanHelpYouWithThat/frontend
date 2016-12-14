@@ -15,7 +15,7 @@ import { PropertyPipe } from './pipes/property/property.pipe';
 import { KeyFilterPipe } from './pipes/key-filter/key-filter.pipe';
 
 import { AppRoutingModule, routableComponents } from './routing/routing.module';
-import { MainStore } from './states/main';
+import { AppState } from './states/main';
 import { RouterStoreModule } from '@ngrx/router-store';
 import { NavigationComponent } from './components/navigation/navigation.component';
 
@@ -32,7 +32,7 @@ import { NavigationComponent } from './components/navigation/navigation.componen
     FormsModule,
     HttpModule,
     RouterStoreModule.connectRouter(),
-    StoreModule.provideStore(MainStore),
+    StoreModule.provideStore(AppState),
     StoreDevtoolsModule.instrumentOnlyWithExtension(),
     AppRoutingModule
   ],

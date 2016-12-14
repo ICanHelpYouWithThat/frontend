@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { AppState } from '../../states/main';
+import { AppStateInterface } from '../../states/main';
 import { Router } from '@angular/router';
 import { ProfileService, Profile} from '../../services/profile/profile.service';
 import {go} from '@ngrx/router-store';
@@ -18,7 +18,7 @@ export class SignupComponent implements OnInit {
 
   constructor(
     private _profileService: ProfileService,
-    private _store: Store<AppState>,
+    private _store: Store<AppStateInterface>,
     private _router: Router
   ) {
     this.profile = this._profileService.profile;

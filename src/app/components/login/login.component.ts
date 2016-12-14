@@ -3,7 +3,7 @@ import { ProfileService, ProfileCredentials } from '../../services/profile/profi
 import { ActivatedRoute } from '@angular/router';
 import { Store } from '@ngrx/store';
 import {Observable} from 'rxjs';
-import {AppState} from '../../states/main';
+import {AppStateInterface} from '../../states/main';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -153,7 +153,7 @@ import {AppState} from '../../states/main';
 })
 
 export class LoginComponent implements OnInit {
-  router: Observable<AppState>;
+  router: Observable<AppStateInterface>;
   private credentials: ProfileCredentials;
   public isSubmitVisible: boolean = false;
   public loginText: string = '';
@@ -165,7 +165,7 @@ export class LoginComponent implements OnInit {
   constructor(
     private _profileService: ProfileService,
     private _route: ActivatedRoute,
-    public store$: Store<AppState>
+    public store$: Store<AppStateInterface>
   ) {
     this.fieldVisibility = 'visible';
     this.credentials = {
@@ -207,7 +207,7 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
 
     console.log(this.store$);
-    this.store$.select('router').subscribe(((val: AppState) => {
+    this.store$.select('router').subscribe(((val: AppStateInterface) => {
       console.log(val);
       console.log(val);
       let animationTrigger = 1;

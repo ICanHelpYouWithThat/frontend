@@ -1,7 +1,7 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { replace } from '@ngrx/router-store';
 import { Store } from '@ngrx/store';
-import {AppState} from './states/main';
+import {AppStateInterface} from './states/main';
 
 @Component({
   selector: 'app-root',
@@ -16,7 +16,7 @@ export class AppComponent implements OnInit {
   }
 
   constructor (
-    public store$: Store<AppState>
+    public store$: Store<AppStateInterface>
   ) {
   }
 
