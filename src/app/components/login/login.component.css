@@ -14,6 +14,9 @@
   margin: auto;
 }
 
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
 .login_input {
   display: flex;
   position: relative;
@@ -30,7 +33,10 @@
   text-align: center;
   border: 1px solid rgba(150, 150, 150, 0.3);
   opacity: 0;
+  -webkit-box-shadow: 0 0 0px 1000px white inset;
+  transition: background-color 5000s ease-in-out 0s;
 }
+
 
 .login_input.on-login {
   animation: fadein 1s;
@@ -113,7 +119,7 @@
   height: 15em;
   width: 15em;
   opacity: .2;
-  background: url("../../../assets/logo.png") no-repeat center center;
+  background: url("../../../assets/logo_p.svg") no-repeat center center;
   background-size: cover;
 }
 

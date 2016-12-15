@@ -21,9 +21,9 @@ textarea:-webkit-autofill:focus,
 select:-webkit-autofill,
 select:-webkit-autofill:hover,
 select:-webkit-autofill:focus {
-  border: 1px solid rgba(150, 150, 150, 0.3)!important;
-  -webkit-box-shadow: 0 0 0px 1000px white inset!important;
-  transition: background-color 5000s ease-in-out 0s!important;
+  /*border: 1px solid rgba(150, 150, 150, 0.3)!important;*/
+  /*-webkit-box-shadow: 0 0 0px 1000px white inset!important;*/
+  /*transition: background-color 5000s ease-in-out 0s!important;*/
 }
 
 
@@ -92,7 +92,7 @@ select:-webkit-autofill:focus {
   height: 7.5em;
   width: 7.5em;
   opacity: .2;
-  background: url("./assets/logo.png") no-repeat center center;
+  background: url("./assets/logo.svg") no-repeat center center;
   background-size: cover;
   transition: .25s;
 }
