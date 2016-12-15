@@ -23,9 +23,9 @@ textarea:-webkit-autofill:focus,
   height: 3.75em;
   padding: 0 10px;
   box-sizing: border-box;
-  width: 50%;
-  min-width: 16em;
-  max-width: 32em;
+  width: 40%;
+  min-width: 14em;
+  max-width: 22em;
   margin-right: auto;
   margin-left: auto;
   font-size: 1.5em;
@@ -35,6 +35,13 @@ textarea:-webkit-autofill:focus,
   opacity: 0;
   -webkit-box-shadow: 0 0 0px 1000px white inset;
   transition: background-color 5000s ease-in-out 0s;
+}
+
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+.login_input:first-child {
+  border-bottom: 0;
 }
 
 
